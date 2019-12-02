@@ -1,0 +1,1 @@
+Penerapan forward chaining
