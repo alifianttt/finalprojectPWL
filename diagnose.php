@@ -46,7 +46,7 @@
         $diag2 = $_POST['diagnose2'];
         $diag3 = $_POST['diagnose3'];
 
-        if($diag1=="ya" && $diag2=="ya" && $diag3="ya"){
+        if($diag1=="ya" && $diag2=="ya" && $diag3=="ya"){
             header('Location: result.php?result=result1');
         } else if ($diag1=="ya" && $diag2=="tidak" && $diag3=="tidak") {
             header('Location: result.php?result=result2');
