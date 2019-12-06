@@ -11,19 +11,19 @@ include "config.php";
 </head>
 <?php
 
-if(isset($_POST['daftar'])){
+if(!empty($_POST)){
+    $nama = $_POST['name'];
     $username = $_POST['username'];
     $pass = $_POST['password'];
     $alamat = $_POST['alamat'];
-    $nama = $_POST['name'];
-    mysqli_query($connect,"INSERT into tb_user (nama,alamat,password,user_name) values($nama, $alamat, $pass, $username)");
-    echo "selamat anda sudah terdaftar";
+    mysqli_query($connect,"INSERT into tb_user '(nama,alamat,password,user_name)' value('$nama', '$alamat', '$pass', '$username')");
+    echo "selamat".$nama."anda sudah terdaftar";
 }
 ?>
 <body>
     <h4>Register Form</h4>
     <form action="register.php" method="POST">
-    <div class="form-group">
+        <div class="form-group">
             <input type="text" name="name" placeholder="name">
         </div>
         <div class="form-group">
