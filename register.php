@@ -10,6 +10,7 @@ include "config.php";
     <title>Document</title>
 </head>
 <?php
+
 if(isset($_POST['daftar'])){
     $username = $_POST['username'];
     $pass = $_POST['password'];
