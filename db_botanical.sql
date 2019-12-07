@@ -1,19 +1,20 @@
-CREATE TABLE tb_user(
-	id int(6) not null AUTO_INCREMENT PRIMARY KEY,
-    nama varchar(30) null,
-    user_name varchar(15) null,
-    password varchar(10) NOT null,
-    alamat VARCHAR(100)
-);
+CREATE TABLE `botanical_db`.`user_table` (
+    `id_user` INT NOT NULL AUTO_INCREMENT ,  
+    `nama` VARCHAR(64) NOT NULL ,  
+    `usr_name` VARCHAR(16) NOT NULL ,
+    `alamat` VARCHAR(255) NOT NULL ,    
+    `pass` VARCHAR(16) NOT NULL ,      
+    PRIMARY KEY  (`id_user`)
+) ENGINE = InnoDB;
 
-CREATE TABLE tb_admin(
-	id_admin int(6) not null AUTO_INCREMENT PRIMARY KEY,
-    nama varchar(30) null,
-    alamat varchar(100) null,
-    email varchar(20) null,
-    password CHARACTER(10) NOT null,
-    JKelamin CHARACTER(10)
-);
+CREATE TABLE `botanical_db`.`admin_table` (
+    `id_admin` INT NOT NULL AUTO_INCREMENT ,  
+    `nama` VARCHAR(64) NOT NULL ,  
+    `usr_name` VARCHAR(16) NOT NULL ,
+    `alamat` VARCHAR(255) NOT NULL ,    
+    `pass` VARCHAR(16) NOT NULL ,      
+    PRIMARY KEY  (`id_user`)
+) ENGINE = InnoDB;
 
 
 
