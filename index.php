@@ -9,7 +9,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
+<?php
+    include "config.php";
+    if(isset($_POST['submit'])){
+        $user = $_POST['username'];
+        $pass = $_POST['password'];
+        $sql = "SELECT count(*) as countusr from user_table where usr_name='$user' and pass='$pass'";
+        $query = mysqli_query($db, $sql);
+        
+        $row = mysqli_fetch_array($query);
+        $count = $row['countusr'];
+        if($count > 0){
+            header('Location: diagnose.php?status=succes');
+        } else {
+            echo "<p class='alert alert-danger' role='alert'>
+            Invalid.</p>";
+        }
+    } 
+?>
 <body>
         <?php
             if(isset($_GET['status'])):
@@ -25,17 +42,17 @@
         </p> <?php endif; ?>
     <h4>Welcome To Seed's Exper System </h4>
     <p>Do you Have'nt Accountt? <a href="./register.php">Sign Up</a></p>
-    <form action="login_cek.php" method="POST">
+    <form action="" method="POST">
         <div class="form-group row">
             <label for="username" class="col-sm-2 col-form-label">Username</label>
             <div class="col-sm-10">
-                <input type="username" class="form-control" id="inputEmail3" placeholder="username" name="username">
+                <input type="username" class="form-control"  placeholder="username" name="username">
             </div>
         </div>
         <div class="form-group row">
             <label for="password" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password">
+                <input type="password" class="form-control" placeholder="Password" name="password">
             </div>
         </div>
         <input type="submit" value="Submit" name="submit">
