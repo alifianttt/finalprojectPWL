@@ -2,7 +2,8 @@ CREATE TABLE tb_user(
 	id int(6) not null AUTO_INCREMENT PRIMARY KEY,
     nama varchar(30) null,
     user_name varchar(15) null,
-    password varchar(10) NOT null
+    password varchar(10) NOT null,
+    alamat VARCHAR(100)
 );
 
 CREATE TABLE tb_admin(
@@ -13,4 +14,6 @@ CREATE TABLE tb_admin(
     password CHARACTER(10) NOT null,
     JKelamin CHARACTER(10)
 );
+
+
 

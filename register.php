@@ -1,5 +1,6 @@
 <?php
 include "config.php";
+include "basecss.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,13 +12,18 @@ include "config.php";
 </head>
 <?php
 
-if(!empty($_POST)){
+if(isset($_POST['daftar'])){
     $nama = $_POST['name'];
     $username = $_POST['username'];
     $pass = $_POST['password'];
     $alamat = $_POST['alamat'];
-    mysqli_query($connect,"INSERT into tb_user '(nama,alamat,password,user_name)' value('$nama', '$alamat', '$pass', '$username')");
-    echo "selamat".$nama."anda sudah terdaftar";
+    $sql = "INSERT INTO tb_user `(nama, user_name, password, alamat)` VALUE ('$nama', '$username', '$pass', '$alamat')";
+    $query = mysqli_connect($connect,$sql);
+    if($query){
+        header('Location: index.php?status=sukses');
+    } else {
+        header('Location: index.php?status=gagal');
+    }
 }
 ?>
 <body>
@@ -30,10 +36,10 @@ if(!empty($_POST)){
             <input type="text" name="username" placeholder="username">
         </div>
         <div class="form-group">
-            <input type="password" name="password" placeholder="password">
+            <input type="text" name="password" placeholder="password">
         </div>
         <div class="form-group">
-            <input type="text-area" name="alamat" placeholder="address">
+            <input type="text" name="alamat" placeholder="address">
         </div>
         <input type="submit" name="daftar" value="Daftar">
     </form>

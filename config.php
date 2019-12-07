@@ -2,7 +2,7 @@
     $host = "localhost";
     $user = "root";
     $pass = "";
-    $dbname = "db_botanical";
+    $dbname = "botanical_db";
 
     $connect = mysqli_connect($host, $user, $pass, $dbname);
 ?>
