@@ -5,7 +5,7 @@
     if(!isset($_SESSION['uname'])){
         header('Location: index.php');
     }
-    echo $_SESSION['uname'];
+    echo "Halo ".$_SESSION['uname'];
     
 ?>
 
@@ -24,7 +24,7 @@
     ?>
     <h4>
         <?php
-            if($_GET['status']=="succes"){
+            if($_GET['status']=="success"){
                 echo "<p class='alert alert-success' role='alert'>
             Success Login!.</p>";
             } 

@@ -1,3 +1,11 @@
+<?php
+    include "config.php";
+    include "basecss.php";
+    session_start();
+    if(!isset($_SESSION['uname'])){
+        header('Location: diagnose.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

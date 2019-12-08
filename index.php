@@ -23,7 +23,7 @@
         $count = $row['countusr'];
         if($count > 0){
             $_SESSION['uname'] = $user;
-            header('Location: diagnose.php');
+            header('Location: diagnose.php?status=success');
         } else {
             echo "<p class='alert alert-danger' role='alert'>
             Invalid.</p>";
