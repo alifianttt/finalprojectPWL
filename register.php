@@ -11,21 +11,30 @@ include "basecss.php";
 </head>
 
 <body>
-    <h4>Register Form</h4>
-    <form action="proses-register.php" method="POST">
-        <div class="form-group">
-            <input type="text" name="nama" placeholder="Nama Anda">
+    <div class="container" >
+        <div class="row">
+        <div class="col-4 home-side">
+            <h3>Perfect Seed</h3>
         </div>
-        <div class="form-group">
-            <input type="text" name="user_name" placeholder="User name">
+        <div class="col-4 form-reg">
+        <h4>Register Form</h4>
+        <form action="proses-register.php" method="POST">
+            <div class="form-group">
+                <input type="text" name="nama" placeholder="Nama Anda">
+            </div>
+            <div class="form-group">
+                <input type="text" name="user_name" placeholder="User name">
+            </div>
+            <div class="form-group">
+                <input type="text" name="alamat" placeholder="Alamat">
+            </div>
+            <div class="form-group">
+                <input type="password" name="pass" placeholder="Password">
+            </div>
+            <input type="submit" name="daftar" value="Daftar">
+        </form>
         </div>
-        <div class="form-group">
-            <input type="text" name="alamat" placeholder="Alamat">
         </div>
-        <div class="form-group">
-            <input type="password" name="pass" placeholder="Password">
-        </div>
-        <input type="submit" name="daftar" value="Daftar">
-    </form>
+    </div>    
 </body>
 </html>

@@ -15,23 +15,25 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hasil Diagnosa</h1>
-    <?php
-        if(isset($_GET['result'])):
-    ?>
-    <h5>
+    <div class="container">
+        <h1>Hasil Diagnosa</h1>
         <?php
-            if($_GET['result'] == 'result1'){
-                echo "Benih Anda 70% layak";
-            } else if ($_GET['result'] == 'result2') {
-                echo "Benih Anda 60% layak";
-            } else if ($_GET['result'] == 'result3') {
-                echo "Benih Anda 50% layak";
-            } else{
-                echo "Sebiknya Benih anda di ganti";
-            }
+            if(isset($_GET['result'])):
         ?>
-    </h5>
-        <?php endif; ?>
+        <h5>
+            <?php
+                if($_GET['result'] == 'result1'){
+                    echo "Benih Anda 70% layak";
+                } else if ($_GET['result'] == 'result2') {
+                    echo "Benih Anda 60% layak";
+                } else if ($_GET['result'] == 'result3') {
+                    echo "Benih Anda 50% layak";
+                } else{
+                    echo "Sebiknya Benih anda di ganti";
+                }
+            ?>
+        </h5>
+            <?php endif; ?>
+    </div>
 </body>
 </html>

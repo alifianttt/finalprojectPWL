@@ -31,6 +31,7 @@
     } 
 ?>
 <body>
+<div class="container">
         <?php
             if(isset($_GET['status'])):
         ?>
@@ -62,6 +63,7 @@
         </div>
         <input type="submit" value="Submit" name="submit">
     </form>
+    </div>
 </body>
 
 </html>
