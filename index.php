@@ -1,5 +1,8 @@
 <?php
     include "basecss.php";
+    include "config.php";
+    session_start();
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,17 +13,17 @@
     <title>Document</title>
 </head>
 <?php
-    include "config.php";
+    
     if(isset($_POST['submit'])){
         $user = $_POST['username'];
         $pass = $_POST['password'];
         $sql = "SELECT count(*) as countusr from user_table where usr_name='$user' and pass='$pass'";
         $query = mysqli_query($db, $sql);
-        
         $row = mysqli_fetch_array($query);
         $count = $row['countusr'];
         if($count > 0){
-            header('Location: diagnose.php?status=succes');
+            $_SESSION['uname'] = $user;
+            header('Location: diagnose.php');
         } else {
             echo "<p class='alert alert-danger' role='alert'>
             Invalid.</p>";
@@ -34,9 +37,11 @@
         <p>
         <?php 
             if($_GET['status'] == 'sukses'){
-                echo "Succes Add new !!";
+                echo "<p class='alert alert-success' role='alert'>
+            Success Added!.</p>";
             } else {
-                echo "Failed added";
+                echo "<p class='alert alert-danger' role='alert'>
+            Failed Added !.</p>";
             }
         ?>
         </p> <?php endif; ?>

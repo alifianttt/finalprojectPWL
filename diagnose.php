@@ -1,3 +1,14 @@
+<?php
+    include "config.php";
+    include "basecss.php";
+    session_start();
+    if(!isset($_SESSION['uname'])){
+        header('Location: index.php');
+    }
+    echo $_SESSION['uname'];
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +25,9 @@
     <h4>
         <?php
             if($_GET['status']=="succes"){
-                echo "Succes Login";
-            } else {
-                echo "Failed !!";
-            }
+                echo "<p class='alert alert-success' role='alert'>
+            Success Login!.</p>";
+            } 
         ?>
     </h4>
         <?php endif;?>
