@@ -7,34 +7,60 @@ include "basecss.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Halaman Pendaftaran</title>
+
+    <style>
+        .home-side{
+            height: 100vh;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container" >
         <div class="row">
-        <div class="col-4 home-side">
-            <h3>Perfect Seed</h3>
+
+            <!-- Bagian Kiri -->
+            <div class="col home-side">
+                <div class="container p-4">
+
+                    <div class="row">
+                        <div class="col text-center">
+                                <img src="./res/img/logo-perfectseed-white.png" class="logo" alt="">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col text-center mt-3">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Endof bagian kiri -->
+
+            <!-- Bagian Form -->
+            <div class="col form-reg p-5">
+                <h3>Halaman Pendaftaran</h3>
+                <p>Tidak punya akun ? segera buat akun anda sekarang dalam waktu kurang dari 5 menit.</p>
+                <form action="proses-register.php" method="POST">
+                    <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nama Lengkap">
+                    </div>
+                    <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Alamat">
+                    </div>
+                    <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <button type="button" class="btn btn-success">Daftar</button>
+                </form>
+            </div>
+            <!-- Endof Bagian Form -->
+
         </div>
-        <div class="col-4 form-reg">
-        <h4>Register Form</h4>
-        <form action="proses-register.php" method="POST">
-            <div class="form-group">
-                <input type="text" name="nama" placeholder="Nama Anda">
-            </div>
-            <div class="form-group">
-                <input type="text" name="user_name" placeholder="User name">
-            </div>
-            <div class="form-group">
-                <input type="text" name="alamat" placeholder="Alamat">
-            </div>
-            <div class="form-group">
-                <input type="password" name="pass" placeholder="Password">
-            </div>
-            <input type="submit" name="daftar" value="Daftar">
-        </form>
-        </div>
-        </div>
-    </div>    
 </body>
 </html>
