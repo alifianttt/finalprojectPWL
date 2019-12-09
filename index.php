@@ -37,7 +37,7 @@
 ?>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
             <?php
                 if(isset($_GET['status'])):
             ?>
@@ -75,12 +75,24 @@
                     <input type="password" class="form-control" placeholder="Password" name="password">
                 </div>
             </div>
-
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="user-type" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="user-type">
+                    Admin
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="user-type" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="user-type">
+                    User
+                </label>
+            </div>
+            <br>
             <input type="submit" class="btn btn-success" value="Submit" name="submit">
         </form>
         <p>Cuaca Saat Ini <?php echo $weather;?></p>
         <img src="<?php echo $image ;?>" alt="">
-        <p>Suhu Saat ini <?php echo $temp;?></p>
+        <p>Suhu Saat ini <?php echo $temp;?> °C</p>
     </div>
 </body>
 
