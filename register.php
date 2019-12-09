@@ -12,6 +12,7 @@ include "basecss.php";
     <style>
         .home-side{
             height: 100vh;
+            padding: 120px 20px 120px 20px;
             background-image: url("./res/img/background.png");
         }
 
@@ -28,11 +29,11 @@ include "basecss.php";
 
             <!-- Bagian Kiri -->
             <div class="col-5 home-side text-center">
-                <div class="container p-4">
+                <div class="container">
 
-                    <div class="row mt-5">
+                    <div class="row">
                         <div class="col ">
-                                <img src="./res/img/logo-perfectseed-white.png" class="logo" alt="">
+                                <img src="./res/img/logo-perfectseed-white.png" class="logo img-fluid" alt="">
                         </div>
                     </div>
 
