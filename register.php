@@ -9,19 +9,8 @@ include "basecss.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Halaman Pendaftaran</title>
 
-    <style>
-        .home-side{
-            height: 100vh;
-            padding: 120px 20px 120px 20px;
-            background-image: url("./res/img/background.png");
-        }
+    <link rel="stylesheet" type="text/css" href="./res/css/registration.css">
 
-        .logo{
-            height: 85%;
-        }
-
-
-    </style>
 </head>
 
 <body>

@@ -59,7 +59,7 @@
 
         <h4>Welcome To Seed's Exper System </h4>
 
-        <p>Do you Have'nt Accountt? <a href="./register.php">Sign Up</a></p>
+        <p>Do you Have'nt Accountt? <a href="./register2.php">Sign Up</a></p>
 
         <form action="" method="POST">
             <div class="form-group row">
