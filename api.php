@@ -1,6 +1,6 @@
 <?php
 $loc = "bantul";
-$endpoint = "http://api.openweathermap.org/data/2.5/weather?q=".$loc."&appid=5ca074667677f6174b23baf81b841128";
+$endpoint = "https://openweathermap.org/data/2.5/weather?q=".$loc.",id&appid=b6907d289e10d714a6e88b30761fae22";
 $json = file_get_contents($endpoint);
 
 $data = json_decode($json,true);
