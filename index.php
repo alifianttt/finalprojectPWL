@@ -77,7 +77,9 @@
 
             <input type="submit" value="Submit" name="submit">
         </form>
-
+        <p>Cuaca Saat Ini <?php echo $weather;?></p>
+        <img src="<?php echo $image ;?>" alt="">
+        <p>Suhu Saat ini <?php echo $temp;?></p>
     </div>
 </body>
 
