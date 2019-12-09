@@ -59,14 +59,8 @@ include "basecss.php";
                     <button type="button" class="btn btn-success">Daftar</button>
                 </form>
             </div>
-<<<<<<< HEAD
-            <input type="submit" name="daftar" value="Daftar" class="btn btn-primary">
-        </form>
-        </div>
-=======
             <!-- Endof Bagian Form -->
 
->>>>>>> bdc66a78c20cc5aa14e4f652e33800773f106831
         </div>
 </body>
 </html>
