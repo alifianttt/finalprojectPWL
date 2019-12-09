@@ -21,7 +21,8 @@
     if(isset($_POST['submit'])){
         $user = $_POST['username'];
         $pass = $_POST['password'];
-        $sql = "SELECT count(*) as countusr from user_table where usr_name='$user' and pass='$pass'";
+        $passw = md5($pass);
+        $sql = "SELECT count(*) as countusr from user_table where usr_name='$user' and pass='$passw'";
         $query = mysqli_query($db, $sql);
         $row = mysqli_fetch_array($query);
         $count = $row['countusr'];
@@ -75,7 +76,7 @@
                 </div>
             </div>
 
-            <input type="submit" value="Submit" name="submit">
+            <input type="submit" class="btn btn-success" value="Submit" name="submit">
         </form>
         <p>Cuaca Saat Ini <?php echo $weather;?></p>
         <img src="<?php echo $image ;?>" alt="">

@@ -20,7 +20,7 @@ include "basecss.php";
         <div class="row">
 
             <!-- Bagian Kiri -->
-            <div class="col home-side">
+            <div class="col-4 home-side">
                 <div class="container p-4">
 
                     <div class="row">
@@ -40,7 +40,7 @@ include "basecss.php";
             <!-- Endof bagian kiri -->
 
             <!-- Bagian Form -->
-            <div class="col form-reg p-5">
+            <div class="col-8 form-reg p-5">
                 <h3>Halaman Pendaftaran</h3>
                 <p>Tidak punya akun ? segera buat akun anda sekarang dalam waktu kurang dari 5 menit.</p>
                 <form action="proses-register.php" method="POST">
@@ -48,7 +48,7 @@ include "basecss.php";
                     <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap">
                     </div>
                     <div class="form-group">
-                    <input type="text" class="form-control" name="user_name" placeholder="Email">
+                    <input type="text" class="form-control" name="user_name" placeholder="User Name">
                     </div>
                     <div class="form-group">
                     <input type="text" class="form-control" name="alamat" placeholder="Alamat">
@@ -56,7 +56,7 @@ include "basecss.php";
                     <div class="form-group">
                     <input type="password" class="form-control" name="pass" placeholder="Password">
                     </div>
-                    <button type="button" class="btn btn-success">Daftar</button>
+                    <input type="submit" name="daftar" class="btn btn-success" value="Daftar">
                 </form>
             </div>
             <!-- Endof Bagian Form -->
