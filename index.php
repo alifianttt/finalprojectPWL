@@ -31,7 +31,7 @@
             header('Location: diagnose.php?status=success');
         } else {
             echo "<p class='alert alert-danger' role='alert'>
-            Invalid.</p>";
+            Invalid .</p>";
         }
     } 
 ?>
