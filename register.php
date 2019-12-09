@@ -45,16 +45,16 @@ include "basecss.php";
                 <p>Tidak punya akun ? segera buat akun anda sekarang dalam waktu kurang dari 5 menit.</p>
                 <form action="proses-register.php" method="POST">
                     <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nama Lengkap">
+                    <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap">
                     </div>
                     <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Email">
+                    <input type="text" class="form-control" name="user_name" placeholder="Email">
                     </div>
                     <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Alamat">
+                    <input type="text" class="form-control" name="alamat" placeholder="Alamat">
                     </div>
                     <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" name="pass" placeholder="Password">
                     </div>
                     <button type="button" class="btn btn-success">Daftar</button>
                 </form>
