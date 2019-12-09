@@ -12,7 +12,14 @@ include "basecss.php";
     <style>
         .home-side{
             height: 100vh;
+            background-image: url("./res/img/background.png");
         }
+
+        .logo{
+            height: 85%;
+        }
+
+
     </style>
 </head>
 
@@ -20,17 +27,17 @@ include "basecss.php";
         <div class="row">
 
             <!-- Bagian Kiri -->
-            <div class="col-4 home-side">
+            <div class="col-5 home-side text-center">
                 <div class="container p-4">
 
-                    <div class="row">
-                        <div class="col text-center">
+                    <div class="row mt-5">
+                        <div class="col ">
                                 <img src="./res/img/logo-perfectseed-white.png" class="logo" alt="">
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col text-center mt-3">
+                        <div class="col mt-3">
                             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
                         </div>
                     </div>
@@ -40,7 +47,7 @@ include "basecss.php";
             <!-- Endof bagian kiri -->
 
             <!-- Bagian Form -->
-            <div class="col-8 form-reg p-5">
+            <div class="col-7 form-reg p-5">
                 <h3>Halaman Pendaftaran</h3>
                 <p>Tidak punya akun ? segera buat akun anda sekarang dalam waktu kurang dari 5 menit.</p>
                 <form action="proses-register.php" method="POST">
