@@ -9,18 +9,8 @@ include "basecss.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Halaman Pendaftaran</title>
 
-    <style>
-        .home-side{
-            height: 100vh;
-            background-image: url("./res/img/background.png");
-        }
+    <link rel="stylesheet" type="text/css" href="./res/css/registration.css">
 
-        .logo{
-            height: 85%;
-        }
-
-
-    </style>
 </head>
 
 <body>
@@ -28,11 +18,11 @@ include "basecss.php";
 
             <!-- Bagian Kiri -->
             <div class="col-5 home-side text-center">
-                <div class="container p-4">
+                <div class="container">
 
-                    <div class="row mt-5">
+                    <div class="row">
                         <div class="col ">
-                                <img src="./res/img/logo-perfectseed-white.png" class="logo" alt="">
+                                <img src="./res/img/logo-perfectseed-white.png" class="logo img-fluid" alt="">
                         </div>
                     </div>
 
