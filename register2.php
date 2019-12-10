@@ -19,7 +19,7 @@ include "basecss.php";
         <!-- row logo -->
         <div class="row row-logo p-2 mb-4">
             <div class="col-md text-center">
-                <img src="./res/img/logo-perfectseed-horizontal.png" alt="" class="logo text-xs-center">
+               <a href="./index.php"><img src="./res/img/logo-perfectseed-horizontal.png" alt="" class="logo text-xs-center"></a> 
             </div>
         </div>
         <!-- endof row logo -->

@@ -21,7 +21,7 @@ body{
 }
 
 .bottom-div p{
-    font-weight: 500;
+    font-weight: 100;
     color: #9F9F9F;
 }
 
@@ -40,7 +40,7 @@ body{
     color: white;
     margin-left: 20px;
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .side-form{
