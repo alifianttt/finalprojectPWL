@@ -1,9 +1,5 @@
 <?php
     include "basecss.php";
-    include "config.php";
-    include "api.php";
-    session_start();
-    
 ?>
 
 
@@ -13,86 +9,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./res/css/landing.css">
     <title>Selamat datang di PerfectSeed</title>
 </head>
 
-<?php
-    
-    if(isset($_POST['submit'])){
-        $user = $_POST['username'];
-        $pass = $_POST['password'];
-        $passw = md5($pass);
-        $sql = "SELECT count(*) as countusr from user_table where usr_name='$user' and pass='$passw'";
-        $query = mysqli_query($db, $sql);
-        $row = mysqli_fetch_array($query);
-        $count = $row['countusr'];
-        if($count > 0){
-            $_SESSION['uname'] = $user;
-            header('Location: diagnose.php?status=success');
-        } else {
-            echo "<p class='alert alert-danger' role='alert'>
-            Invalid .</p>";
-        }
-    } 
-?>
-
 <body>
     <div class="container-fluid">
-            <?php
-                if(isset($_GET['status'])):
-            ?>
+
+        <div class="row main-div">
             
-            <p>
+            <!-- Bagian kiri -->
+            <div class="col-md side-left">
+                <ul class="features-ul">
 
-            <?php 
-                if($_GET['status'] == 'sukses'){
-                    echo "<p class='alert alert-success' role='alert'>
-                Success Added!.</p>";
-                } else {
-                    echo "<p class='alert alert-danger' role='alert'>
-                Failed Added !.</p>";
-                }
-            ?>
-            </p> 
-            
-            <?php endif; ?>
+                    <li class="features-li">
+                        <span class="features-icon"><i class="material-icons">speed</i></span>
+                        <span class="features-text">Proses analisa sangat cepat.</span>
+                    </li>
 
-        <h4>Welcome To Seed's Exper System </h4>
+                    <li class="features-li">
+                        <span class="features-icon"><i class="material-icons">directions_run</i></span>
+                        <span class="features-text">Bisa diakses dimana saja.</span>
+                    </li>
 
-        <p>Do you Have'nt Accountt? <a href="./register2.php">Sign Up</a></p>
+                    <li class="features-li">
+                        <span class="features-icon"><i class="material-icons">how_to_reg</i></span>
+                        <span class="features-text">Berdasarkan uji coba para ahli.</span>
+                    </li>
+                </ul>
 
-        <form action="" method="POST">
-            <div class="form-group row">
-                <label for="username" class="col-sm-2 col-form-label">Username</label>
-                <div class="col-sm-10">
-                    <input type="username" class="form-control"  placeholder="username" name="username">
+                <img class="bg-logo" src="./res/img/logo-bg.png" alt="">
+
+
+            </div>
+            <!-- endof bagian kiri -->
+
+            <!-- Bagian button -->
+            <div class="col-md side-form text-center">
+                <div class="container-fluid main-box">
+                    <img src="./res/img/logo-perfectseed.png" alt="">
+                    
+                    <div class="row mt-3">
+                        <div class="col">
+                            <p>Bergabung dengan PerfectSeed dan dapatkan semua fasilitasnya.</p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col">
+                            <a href="./register2.php"><button type="button" class="btn btn-daftar">Daftar Sekarang</button></a>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col">
+                            <a href="./login.php"><button type="button" class="btn btn-masuk">Masuk</button></a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+            <!-- endof bagian button -->
 
-            <div class="form-group row">
-                <label for="password" class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" placeholder="Password" name="password">
-                </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="row bottom-div">
+            <div class="col-md text-center p-2">
+                <p>(c) PerfectSeed 2019</p>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="user-type" id="exampleRadios2" value="option2">
-                <label class="form-check-label" for="user-type">
-                    Admin
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="user-type" id="exampleRadios2" value="option2">
-                <label class="form-check-label" for="user-type">
-                    User
-                </label>
-            </div>
-            <br>
-            <input type="submit" class="btn btn-success" value="Submit" name="submit">
-        </form>
-        <p>Cuaca Saat Ini <?php echo $weather;?></p>
-        <img src="<?php echo $image ;?>" alt="">
-        <p>Suhu Saat ini <?php echo $temp;?> °C</p>
+        </div>
+        <!-- endof bottom bar -->
+
     </div>
 </body>
 
