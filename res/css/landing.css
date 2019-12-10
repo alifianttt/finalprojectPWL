@@ -1,0 +1,55 @@
+body{
+    height: 100vh;
+    background-color: white;
+    overflow: hidden;
+}
+
+.main-div{
+    height: 95vh;
+}
+.side-left{
+    position: relative;
+    background-color: #508138;
+    overflow: hidden;
+}
+
+
+.bottom-div{
+    height: 5vh;
+    background-color: #EFEFEF;
+}
+
+.bottom-div p{
+    font-weight: 500;
+    color: #9F9F9F;
+}
+
+.features-ul{
+    position: absolute !important;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    list-style: none;
+}
+
+.material-icons{
+    color: white;
+    font-size: 36px;  /* Preferred icon size */
+    padding-top: 10px;
+}
+
+.features-text{
+    color: white;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.side-form{
+    overflow: hidden;
+    padding: 70px;
+}
+
+.side-form img{
+    height: 100px;
+}
