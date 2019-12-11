@@ -3,7 +3,9 @@
     include "config.php";
     include "api.php";
     session_start();
-    
+    if(!isset($_SESSION['uname'])){
+        header('Location: index.php');
+    }
 ?>
 
 
