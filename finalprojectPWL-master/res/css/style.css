@@ -1,0 +1,15 @@
+*{
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: bold;
+}
+
+.form-reg{
+    padding: 10px;
+    background-color: aliceblue;
+}
+
+.home-side{
+    padding: 10px;
+    color: aliceblue;
+    background-color: black;
+}
