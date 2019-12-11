@@ -1,0 +1,93 @@
+body{
+    height: 100vh;
+    background-color: white;
+    overflow: hidden;
+}
+
+.main-div{
+    height: 95vh;
+}
+.side-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #508138;
+    overflow: hidden;
+}
+
+.bottom-div{
+    height: 5vh;
+    background-color: #EFEFEF;
+}
+
+.bottom-div p{
+    font-weight: 100;
+    color: #9F9F9F;
+}
+
+.features-ul{
+
+    list-style: none;
+}
+
+.material-icons{
+    color: white;
+    font-size: 36px;  /* Preferred icon size */
+    padding-top: 10px;
+}
+
+.features-text{
+    color: white;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.side-form{
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+.main-box{
+    position: relative;
+}
+
+.main-box p{
+    font-weight: 600;
+}
+
+.side-form img{
+    height: 100px;
+}
+
+.btn-daftar{
+    width: 40%;
+    background-color: #508138;
+    color: #f5f5f5;
+    font-weight: 600;
+}
+
+.btn-daftar:hover{
+    color: white;
+}
+
+.btn-masuk{
+    width: 40%;
+    background-color: white;
+    color: #508138;
+    font-weight: 600;
+    border: 1.5px solid #508138;
+}
+
+.btn-masuk:hover{
+    color:  #508138;
+}
+
+/* Background */
+.bg-logo{
+    position: fixed;
+    transform: translateY(-15%);
+    transform: translateX(20%);
+
+}
