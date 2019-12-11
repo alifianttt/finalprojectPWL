@@ -87,7 +87,8 @@ body{
 /* Background */
 .bg-logo{
     position: fixed;
-    transform: translateY(-15%);
-    transform: translateX(20%);
+    height: 90%;
+    transform: translateY(-30%);
+    transform: translateX(30%);
 
 }
