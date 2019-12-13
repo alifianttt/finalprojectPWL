@@ -19,6 +19,7 @@
 <?php
     
     if(isset($_POST['submit'])){
+
         $user = $_POST['username'];
         $pass = $_POST['password'];
         $passw = md5($pass);
@@ -76,13 +77,13 @@
                 </div>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="user-type" id="exampleRadios2" value="option2">
+                <input class="form-check-input" type="radio" name="user-type" id="exampleRadios2" value="Admin">
                 <label class="form-check-label" for="user-type">
                     Admin
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="user-type" id="exampleRadios2" value="option2">
+                <input class="form-check-input" type="radio" name="user-type" id="exampleRadios2" value="User">
                 <label class="form-check-label" for="user-type">
                     User
                 </label>
