@@ -19,20 +19,36 @@
 <?php
     
     if(isset($_POST['submit'])){
-
-        $user = $_POST['username'];
-        $pass = $_POST['password'];
-        $passw = md5($pass);
-        $sql = "SELECT count(*) as countusr from user_table where usr_name='$user' and pass='$passw'";
-        $query = mysqli_query($db, $sql);
-        $row = mysqli_fetch_array($query);
-        $count = $row['countusr'];
-        if($count > 0){
-            $_SESSION['uname'] = $user;
-            header('Location: diagnose.php?status=success');
+        if($_POST['user-type']=="Admin"){
+            $user = $_POST['username'];
+            $pass = $_POST['password'];
+            $passw = md5($pass);
+            $sql = "SELECT count(*) as countusr from admin_table where usr_name='$user' and pass='$passw'";
+            $query = mysqli_query($db, $sql);
+            $row = mysqli_fetch_array($query);
+            $count = $row['countusr'];
+            if($count > 0){
+                $_SESSION['uname'] = $user;
+                header('Location: diagnose.php?status=success');
+            } else {
+                echo "<p class='alert alert-danger' role='alert'>
+                Invalid .</p>";
+            }
         } else {
-            echo "<p class='alert alert-danger' role='alert'>
-            Invalid .</p>";
+            $user = $_POST['username'];
+            $pass = $_POST['password'];
+            $passw = md5($pass);
+            $sql = "SELECT count(*) as countusr from user_table where usr_name='$user' and pass='$passw'";
+            $query = mysqli_query($db, $sql);
+            $row = mysqli_fetch_array($query);
+            $count = $row['countusr'];
+            if($count > 0){
+                $_SESSION['uname'] = $user;
+                header('Location: diagnose.php?status=success');
+            } else {
+                echo "<p class='alert alert-danger' role='alert'>
+                Invalid .</p>";
+            }
         }
     } 
 ?>

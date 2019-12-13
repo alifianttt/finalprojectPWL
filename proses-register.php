@@ -13,9 +13,9 @@ if(isset($_POST['daftar'])){
         $query = mysqli_query($db, $sql);
 
         if($query){
-            header('Location: index.php?status=sukses');
+            header('Location: login.php?status=sukses');
         } else {
-            header('Location: index.php?staus=gagal');
+            header('Location: login.php?staus=gagal');
         }
          
     } else {
@@ -29,9 +29,9 @@ if(isset($_POST['daftar'])){
         $query = mysqli_query($db, $sql);
 
         if($query){
-            header('Location: index.php?status=sukses');
+            header('Location: login.php?status=sukses');
         } else {
-            header('Location: index.php?staus=gagal');
+            header('Location: login.php?staus=gagal');
         }
     }
 }
