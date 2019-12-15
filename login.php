@@ -29,7 +29,7 @@
             $count = $row['countusr'];
             if($count > 0){
                 $_SESSION['uname'] = $user;
-                header('Location: diagnose.php?status=success');
+                header('Location: admin.php?status=success');
             } else {
                 echo "<p class='alert alert-danger' role='alert'>
                 Invalid .</p>";
@@ -44,7 +44,7 @@
             $count = $row['countusr'];
             if($count > 0){
                 $_SESSION['uname'] = $user;
-                header('Location: diagnose.php?status=success');
+                header('Location: user_page.php?status=success');
             } else {
                 echo "<p class='alert alert-danger' role='alert'>
                 Invalid .</p>";
@@ -58,7 +58,6 @@
             <?php
                 if(isset($_GET['status'])):
             ?>
-            
             <p>
 
             <?php 
