@@ -19,19 +19,36 @@
 <?php
     
     if(isset($_POST['submit'])){
-        $user = $_POST['username'];
-        $pass = $_POST['password'];
-        $passw = md5($pass);
-        $sql = "SELECT count(*) as countusr from user_table where usr_name='$user' and pass='$passw'";
-        $query = mysqli_query($db, $sql);
-        $row = mysqli_fetch_array($query);
-        $count = $row['countusr'];
-        if($count > 0){
-            $_SESSION['uname'] = $user;
-            header('Location: diagnose.php?status=success');
+        if($_POST['user-type']=="Admin"){
+            $user = $_POST['username'];
+            $pass = $_POST['password'];
+            $passw = md5($pass);
+            $sql = "SELECT count(*) as countusr from admin_table where usr_name='$user' and pass='$passw'";
+            $query = mysqli_query($db, $sql);
+            $row = mysqli_fetch_array($query);
+            $count = $row['countusr'];
+            if($count > 0){
+                $_SESSION['uname'] = $user;
+                header('Location: admin.php?status=success');
+            } else {
+                echo "<p class='alert alert-danger' role='alert'>
+                Invalid .</p>";
+            }
         } else {
-            echo "<p class='alert alert-danger' role='alert'>
-            Invalid .</p>";
+            $user = $_POST['username'];
+            $pass = $_POST['password'];
+            $passw = md5($pass);
+            $sql = "SELECT count(*) as countusr from user_table where usr_name='$user' and pass='$passw'";
+            $query = mysqli_query($db, $sql);
+            $row = mysqli_fetch_array($query);
+            $count = $row['countusr'];
+            if($count > 0){
+                $_SESSION['uname'] = $user;
+                header('Location: user_page.php?status=success');
+            } else {
+                echo "<p class='alert alert-danger' role='alert'>
+                Invalid .</p>";
+            }
         }
     } 
 ?>
@@ -41,7 +58,6 @@
             <?php
                 if(isset($_GET['status'])):
             ?>
-            
             <p>
 
             <?php 
@@ -76,13 +92,13 @@
                 </div>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="user-type" id="exampleRadios2" value="option2">
+                <input class="form-check-input" type="radio" name="user-type" id="exampleRadios2" value="Admin">
                 <label class="form-check-label" for="user-type">
                     Admin
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="user-type" id="exampleRadios2" value="option2">
+                <input class="form-check-input" type="radio" name="user-type" id="exampleRadios2" value="User">
                 <label class="form-check-label" for="user-type">
                     User
                 </label>

@@ -65,6 +65,13 @@ include "basecss.php";
                         <div class="form-group">
                         <input type="password" class="form-control" name="pass" placeholder="Password">
                         </div>
+                        
+                        <div class="form-group">
+                            <select name="user-type" id="">Daftar Sebagai
+                                <option value="User">User</option>
+                                <option value="Admin">Admin</option>
+                            </select>
+                        </div>
 
                         <div class="form-group mt-2">
                             <div class="form-check">
