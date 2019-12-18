@@ -80,7 +80,11 @@ include "basecss.php";
                                 </label>
                             </div>
                         </div>
-                        <input type="submit" name="daftar" class="btn btn-success mt-4" value="Daftar">
+                        <?php if($_GET['type']=='edit'):?>
+                            <input type="submit" name="daftar" class="btn btn-success mt-4" value="Edit">
+                        <?php else:?>
+                            <input type="submit" name="daftar" class="btn btn-success mt-4" value="Daftar">
+                        <?php endif;?>
                 </form>
             </div>
         </div>

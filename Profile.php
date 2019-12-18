@@ -44,7 +44,7 @@
                     <a class="nav-link js-scroll-trigger" href="#about">Profile User</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#experience">Result</a>
+                    <a class="nav-link js-scroll-trigger" href="#experience">Diagnose</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#education">History</a>
@@ -66,6 +66,7 @@
                 <p class="lead mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
                     book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
                     more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p><a href="register2.php?type=edit" class="btn btn-success">Edit</a> </p>
                 <div class="social-icons">
                     <a href="#">
                         <i class="fab fa-twitter"></i>
@@ -73,6 +74,7 @@
                     <a href="#">
                         <i class="fab fa-facebook-f"></i>
                     </a>
+                    
                 </div>
             </div>
         </section>
@@ -86,18 +88,20 @@
                 <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="resume-content">
                         <h3 class="mb-0">Diagnosa 1</h3>
-                        <div class="subheading mb-3">Jenis tanaman apa yang saudara tanam :</div>
-                        <div class="radio1">
-                            <label><input type="radio" name="optradio">Padi</label>
+                        <div class="form-group">
+                            <label for="diagnose1">Apakah Biji Kuning?</label>
+                            <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose1" value="tidak">Tidak</label>
                         </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Jagung</label>
+                        <div class="form-group">
+                            <label for="diagnose2">Apakah Biji Hitam?</label>
+                            <label ><input type="radio" name="diagnose2" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose2" value="tidak">Tidak</label>
                         </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Strawberry</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Mangga</label>
+                        <div class="form-group">
+                            <label for="diagnose3">Apakah Biji Kuning?</label>
+                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
                         </div>
                     </div>
                 </div>
@@ -105,18 +109,20 @@
                 <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="resume-content">
                         <h3 class="mb-0">Diagnosa 2</h3>
-                        <div class="subheading mb-3">Jenis lahan apa yang saudara manfaatkan untuk tanaman anda :</div>
-                        <div class="radio2">
-                            <label><input type="radio" name="optradio">Lahan Kering</label>
+                        <div class="form-group">
+                            <label for="diagnose1">Apakah Biji Kuning?</label>
+                            <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose1" value="tidak">Tidak</label>
                         </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Lahan Basah</label>
+                        <div class="form-group">
+                            <label for="diagnose2">Apakah Biji Hitam?</label>
+                            <label ><input type="radio" name="diagnose2" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose2" value="tidak">Tidak</label>
                         </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Lahan Tanah Irigasi</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Lahan Sawah</label>
+                        <div class="form-group">
+                            <label for="diagnose3">Apakah Biji Kuning?</label>
+                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
                         </div>
                     </div>
                 </div>
@@ -124,18 +130,20 @@
                 <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="resume-content">
                         <h3 class="mb-0">Diagnosa 3</h3>
-                        <div class="subheading mb-3">Pupuk yang anda gunakan selama ini :</div>
-                        <div class="radio2">
-                            <label><input type="radio" name="optradio">Lahan Kering</label>
+                        <div class="form-group">
+                            <label for="diagnose1">Apakah Biji Kuning?</label>
+                            <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose1" value="tidak">Tidak</label>
                         </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Lahan Basah</label>
+                        <div class="form-group">
+                            <label for="diagnose2">Apakah Biji Hitam?</label>
+                            <label ><input type="radio" name="diagnose2" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose2" value="tidak">Tidak</label>
                         </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Lahan Tanah Irigasi</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Lahan Sawah</label>
+                        <div class="form-group">
+                            <label for="diagnose3">Apakah Biji Kuning?</label>
+                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
                         </div>
                     </div>
                 </div>
@@ -143,26 +151,29 @@
                 <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
                     <div class="resume-content">
                         <h3 class="mb-0">Diagnosa 4</h3>
-                        <div class="subheading mb-3">Warna bibit yang anda pakai untuk menanam :</div>
-                        <div class="radio2">
-                            <label><input type="radio" name="optradio">Coklat</label>
+                        <div class="form-group">
+                            <label for="diagnose1">Apakah Biji Kuning?</label>
+                            <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose1" value="tidak">Tidak</label>
                         </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Putih</label>
+                        <div class="form-group">
+                            <label for="diagnose2">Apakah Biji Hitam?</label>
+                            <label ><input type="radio" name="diagnose2" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose2" value="tidak">Tidak</label>
                         </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Biru</label>
+                        <div class="form-group">
+                            <label for="diagnose3">Apakah Biji Kuning?</label>
+                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
                         </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio">Hitam</label>
-                        </div>
+                        <input type="submit" name="start" value="Start" class="btn btn-success">
                     </div>
                 </div>
 
             </div>
-
+            
         </section>
-
+        
         <hr class="m-0">
 
         <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">

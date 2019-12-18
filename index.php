@@ -58,7 +58,7 @@
 
                     <div class="row mt-3">
                         <div class="col">
-                            <a href="./register2.php"><button type="button" class="btn btn-daftar">Daftar Sekarang</button></a>
+                            <a href="./register2.php?type=daftar"><button type="button" class="btn btn-daftar">Daftar Sekarang</button></a>
                         </div>
                     </div>
 
