@@ -1,3 +1,17 @@
+<?php
+include "config.php";
+session_start();
+if(!isset($_SESSION['id'])){
+    header('Location: login.php');
+}
+$id = $_SESSION['id'];
+$select = "SELECT * FROM user_table where id_user='$id'";
+$sql = mysqli_query($db, $select);
+$row = mysqli_fetch_array($sql);
+$name = $row['nama'];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,16 +71,15 @@
 
         <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
             <div class="w-100">
-                <h1 class="mb-0">Ananda Emka
-                    <span class="text-primary">Oktora</span>
+                <h1 class="mb-0"><?php echo $name;?>
                 </h1>
-                <div class="subheading mb-5">Jalan Cempaka 1 no 15 Pohruboh sleman yogyakarta
-                    <a href="mailto:name@email.com">anandaoktora12@gmail.com</a>
+                <div class="subheading mb-5">
+                    Jalan Cempaka 1 no 15 Pohruboh sleman yogyakarta
                 </div>
                 <p class="lead mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
                     book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
                     more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <p><a href="register2.php?type=edit" class="btn btn-success">Edit</a> </p>
+                    <p><a href="edit.php?id=<?php echo $id;?>" class="btn btn-success">Edit</a> </p>
                 <div class="social-icons">
                     <a href="#">
                         <i class="fab fa-twitter"></i>

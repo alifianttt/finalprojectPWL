@@ -1,5 +1,22 @@
 <?php
 include "basecss.php";
+include "config.php";
+session_start();
+$id = $_GET['id'];
+$select = "SELECT * FROM user_table where id_user='$id'";
+$sql = mysqli_query($db, $select);
+$row = mysqli_fetch_array($sql);
+
+if(isset($_POST['edit'])){
+    $name = $_POST['nama'];
+    $usr_name = $_POST['user_name'];
+    $addr = $_POST['alamat'];
+    $update = "UPDATE user_table SET nama='$name', usr_name='$usr_name', alamat='$addr' WHERE id_user ='$id'";
+    $sql = mysqli_query($db, $update);
+
+   echo "<p class='alert alert-success' role='alert'>
+   Succes Edit .</p>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,38 +66,19 @@ include "basecss.php";
 
             <div class="col-md right-side pt-3 text-center">
                 <h4 class="mt-5 ">Lengkapi formulir dibawah ini</h4>
-                <form action="proses-register.php" method="POST" class="pr-5">
+                <form action="" method="POST" class="pr-5">
                         <div class="form-group mt-5">
-                        <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap">
+                        <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" value="<?php echo $row['nama'];?>">
                         </div>
 
                         <div class="form-group">
-                        <input type="text" class="form-control" name="user_name" placeholder="User Name">
+                        <input type="text" class="form-control" name="user_name" placeholder="User Name" value="<?php echo $row['usr_name'];?>">
                         </div>
 
                         <div class="form-group">
-                        <input type="text" class="form-control" name="alamat" placeholder="Alamat">
+                        <input type="text" class="form-control" name="alamat" placeholder="Alamat" value="<?php echo $row['alamat'];?>">
                         </div>
-
-                        <div class="form-group">
-                        <input type="password" class="form-control" name="pass" placeholder="Password">
-                        </div>
-                        
-                        <div class="form-group">
-                            <select name="user-type" id="">Daftar Sebagai
-                                <option value="User">User</option>
-                                <option value="Admin">Admin</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group mt-2">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" value="setuju">Saya setuju dengan ketentuan yang ada.
-                                </label>
-                            </div>
-                        </div>
-                            <input type="submit" name="daftar" class="btn btn-success mt-4" value="Daftar">
+                            <input type="submit" name="edit" class="btn btn-success mt-4" value="Edit">
                 </form>
             </div>
         </div>
