@@ -2,9 +2,14 @@
     include "config.php";
     include "basecss.php";
     session_start();
-    if(!isset($_SESSION['uname'])){
-        header('Location: diagnose.php');
+    if(!isset($_SESSION['id'])){
+        header('Location: Profile.php');
     }
+    function add($hasil, $id){
+        $db = mysqli_connect("localhost", "root", "", "botanical_db");
+        $sql = "INSERT INTO diagnose_table (hasil, id_user) VALUE ('$hasil', '$id')";
+        $query = mysqli_query($db, $sql);
+    }    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,23 +23,15 @@
     <div class="container">
         <h1>Hasil Diagnosa</h1>
         <?php
-            if(isset($_GET['result'])):
+            if($_GET['res']=='layak'){
+                $hasil = "Biji anda layak";
+                $id = $_SESSION['id'];
+                add($hasil, $id);
+                echo "<h4>Berhasil</h4>";
+                echo $hasil;
+            } 
         ?>
-        <h5>
-            <?php
-                if($_GET['result'] == 'result1'){
-                    echo "Benih Anda 70% layak";
-                } else if ($_GET['result'] == 'result2') {
-                    echo "Benih Anda 60% layak";
-                } else if ($_GET['result'] == 'result3') {
-                    echo "Benih Anda 50% layak";
-                } else{
-                    echo "Sebiknya Benih anda di ganti";
-                }
-            ?>
-        </h5>
-            <?php endif; ?>
+        
     </div>
 </body>
-
 </html>

@@ -100,81 +100,6 @@ if(!isset($_SESSION['id'])){
                 <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="resume-content">
                         <h3 class="mb-0">Diagnosa 1</h3>
-<<<<<<< HEAD:Profile.html
-                        <div class="subheading mb-3">Jenis tanaman apa yang saudara tanam :</div>
-                        <div class="radio1">
-                            <label><input type="radio" name="optradio1">Padi</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio1">Jagung</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio1">Strawberry</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio1">Mangga</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="resume-content">
-                        <h3 class="mb-0">Diagnosa 2</h3>
-                        <div class="subheading mb-3">Jenis lahan apa yang saudara manfaatkan untuk tanaman anda :</div>
-                        <div class="radio2">
-                            <label><input type="radio" name="optradio2">Lahan Kering</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio2">Lahan Basah</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio2">Lahan Tanah Irigasi</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio2">Lahan Sawah</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="resume-content">
-                        <h3 class="mb-0">Diagnosa 3</h3>
-                        <div class="subheading mb-3">Pupuk yang anda gunakan selama ini :</div>
-                        <div class="radio2">
-                            <label><input type="radio" name="optradio3">Lahan Kering</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio3">Lahan Basah</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio3">Lahan Tanah Irigasi</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio3">Lahan Sawah</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-                    <div class="resume-content">
-                        <h3 class="mb-0">Diagnosa 4</h3>
-                        <div class="subheading mb-3">Warna bibit yang anda pakai untuk menanam :</div>
-                        <div class="radio2">
-                            <label><input type="radio" name="optradio4">Coklat</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio4">Putih</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio4">Biru</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="optradio4">Hitam</label>
-                        </div>
-                    </div>
-                </div>
-
-=======
                         <div class="form-group">
                             <label for="diagnose1">Apakah Biji Kuning?</label>
                             <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
@@ -195,7 +120,6 @@ if(!isset($_SESSION['id'])){
                     </div>
                 </div>
                 </form>
->>>>>>> 3132f777d01299636eb36891b2cec7050e1209ad:Profile.php
             </div>
             
         </section>
