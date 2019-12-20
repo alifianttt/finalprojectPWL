@@ -10,6 +10,3 @@
         die("Failed to connect database !!: ". mysqli_connect_error());
         
     }
-
-
-?>
