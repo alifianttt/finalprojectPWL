@@ -13,7 +13,14 @@ CREATE TABLE `botanical_db`.`admin_table` (
     `usr_name` VARCHAR(16) NOT NULL ,
     `alamat` VARCHAR(255) NOT NULL ,    
     `pass` VARCHAR(16) NOT NULL ,      
-    PRIMARY KEY  (`id_user`)
+    PRIMARY KEY  (`id_admin`)
+) ENGINE = InnoDB;
+
+CREATE TABLE `botanical_db`.`diagnosa_table` (
+    `id_diagnose` INT NOT NULL AUTO_INCREMENT ,  
+    `hasil` VARCHAR(100) NOT NULL ,  
+    `id_user` INT NOT NULL ,
+    PRIMARY KEY  (`id_diagnose`)
 ) ENGINE = InnoDB;
 
 

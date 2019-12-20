@@ -5,6 +5,11 @@
     if(!isset($_SESSION['id'])){
         header('Location: Profile.php');
     }
+    function add($hasil, $id){
+        $db = mysqli_connect("localhost", "root", "", "botanical_db");
+        $sql = "INSERT INTO diagnose_table (hasil, id_user) VALUE ('$hasil', '$id')";
+        $query = mysqli_query($db, $sql);
+    }    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +22,15 @@
 <body>
     <div class="container">
         <h1>Hasil Diagnosa</h1>
+        <?php
+            if($_GET['res']=='layak'){
+                $hasil = "Biji anda layak";
+                $id = $_SESSION['id'];
+                add($hasil, $id);
+                echo "<h4>Berhasil</h4>";
+                echo $hasil;
+            } 
+        ?>
         
     </div>
 </body>
