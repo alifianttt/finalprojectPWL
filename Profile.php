@@ -1,16 +1,15 @@
 <?php
 include "config.php";
+
 session_start();
 if(!isset($_SESSION['id'])){
     header('Location: login.php');
-}
-$id = $_SESSION['id'];
-$select = "SELECT * FROM user_table where id_user='$id'";
-$sql = mysqli_query($db, $select);
-$row = mysqli_fetch_array($sql);
-$name = $row['nama'];
-
-
+    }
+    $id = $_SESSION['id'];
+    $select = "SELECT * FROM user_table where id_user='$id'";
+    $sql = mysqli_query($db, $select);
+    $row = mysqli_fetch_array($sql);
+    $name = $row['nama'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,7 +96,7 @@ $name = $row['nama'];
         <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
             <div class="w-100">
                 <h2 class="mb-5">Diagnosa</h2>
-
+                <form action="prosesdiagnosa.php" method="POST">
                 <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="resume-content">
                         <h3 class="mb-0">Diagnosa 1</h3>
@@ -116,73 +115,11 @@ $name = $row['nama'];
                             <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
                             <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
                         </div>
+                        
+                        <input type="submit" name="starts" value="Start" class="btn btn-success">
                     </div>
                 </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="resume-content">
-                        <h3 class="mb-0">Diagnosa 2</h3>
-                        <div class="form-group">
-                            <label for="diagnose1">Apakah Biji Kuning?</label>
-                            <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose1" value="tidak">Tidak</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="diagnose2">Apakah Biji Hitam?</label>
-                            <label ><input type="radio" name="diagnose2" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose2" value="tidak">Tidak</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="diagnose3">Apakah Biji Kuning?</label>
-                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="resume-content">
-                        <h3 class="mb-0">Diagnosa 3</h3>
-                        <div class="form-group">
-                            <label for="diagnose1">Apakah Biji Kuning?</label>
-                            <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose1" value="tidak">Tidak</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="diagnose2">Apakah Biji Hitam?</label>
-                            <label ><input type="radio" name="diagnose2" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose2" value="tidak">Tidak</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="diagnose3">Apakah Biji Kuning?</label>
-                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-                    <div class="resume-content">
-                        <h3 class="mb-0">Diagnosa 4</h3>
-                        <div class="form-group">
-                            <label for="diagnose1">Apakah Biji Kuning?</label>
-                            <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose1" value="tidak">Tidak</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="diagnose2">Apakah Biji Hitam?</label>
-                            <label ><input type="radio" name="diagnose2" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose2" value="tidak">Tidak</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="diagnose3">Apakah Biji Kuning?</label>
-                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
-                        </div>
-                        <input type="submit" name="start" value="Start" class="btn btn-success">
-                    </div>
-                </div>
-
+                </form>
             </div>
             
         </section>

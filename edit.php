@@ -1,22 +1,24 @@
 <?php
 include "basecss.php";
 include "config.php";
-session_start();
-$id = $_GET['id'];
-$select = "SELECT * FROM user_table where id_user='$id'";
-$sql = mysqli_query($db, $select);
-$row = mysqli_fetch_array($sql);
+    session_start();
+    include "config.php";
+    $id = $_GET['id'];
+    $select = "SELECT * FROM user_table where id_user='$id'";
+    $sql = mysqli_query($db, $select);
+    $row = mysqli_fetch_array($sql);
+    
+    if(isset($_POST['edit'])){
+        $name = $_POST['nama'];
+        $usr_name = $_POST['user_name'];
+        $addr = $_POST['alamat'];
+        $update = "UPDATE user_table SET nama='$name', usr_name='$usr_name', alamat='$addr' WHERE id_user ='$id'";
+        $sql = mysqli_query($db, $update);
+    
+       echo "<p class='alert alert-success' role='alert'>
+       Succes Edit .</p>";
+    }
 
-if(isset($_POST['edit'])){
-    $name = $_POST['nama'];
-    $usr_name = $_POST['user_name'];
-    $addr = $_POST['alamat'];
-    $update = "UPDATE user_table SET nama='$name', usr_name='$usr_name', alamat='$addr' WHERE id_user ='$id'";
-    $sql = mysqli_query($db, $update);
-
-   echo "<p class='alert alert-success' role='alert'>
-   Succes Edit .</p>";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +67,7 @@ if(isset($_POST['edit'])){
             </div>
 
             <div class="col-md right-side pt-3 text-center">
-                <h4 class="mt-5 ">Lengkapi formulir dibawah ini</h4>
+                <h4 class="mt-5 ">Silahkan Edit Data Anda</h4>
                 <form action="" method="POST" class="pr-5">
                         <div class="form-group mt-5">
                         <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" value="<?php echo $row['nama'];?>">
