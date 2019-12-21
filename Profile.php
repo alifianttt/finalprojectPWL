@@ -4,7 +4,7 @@ include "config.php";
 session_start();
 if(!isset($_SESSION['id'])){
     header('Location: login.php');
-    }
+}
     $id = $_SESSION['id'];
     $select = "SELECT * FROM user_table where id_user='$id'";
     $sql = mysqli_query($db, $select);

@@ -23,13 +23,14 @@
             $user = $_POST['username'];
             $pass = $_POST['password'];
             $passw = md5($pass);
-            $sql = "SELECT count(*) as countusr from admin_table where usr_name='$user' and pass='$passw'";
+            $sql = "SELECT count(*) as countusr , id_admin  from admin_table where usr_name='$user' and pass='$passw'";
             $query = mysqli_query($db, $sql);
             $row = mysqli_fetch_array($query);
             $count = $row['countusr'];
+            $id = $row['id_admin']; 
             if($count > 0){
-                $_SESSION['uname'] = $user;
-                header('Location: admin.php?status=success');
+                $_SESSION['id'] = $id;
+                header('Location: admin.php');
             } else {
                 echo "<p class='alert alert-danger' role='alert'>
                 Invalid .</p>";
@@ -38,13 +39,14 @@
             $user = $_POST['username'];
             $pass = $_POST['password'];
             $passw = md5($pass);
-            $sql = "SELECT count(*) as countusr from user_table where usr_name='$user' and pass='$passw'";
+            $sql = "SELECT count(*) as countusr, id_user from user_table where usr_name='$user' and pass='$passw'";
             $query = mysqli_query($db, $sql);
             $row = mysqli_fetch_array($query);
             $count = $row['countusr'];
+            $id = $row['id_user'];
             if($count > 0){
-                $_SESSION['uname'] = $user;
-                header('Location: user_page.php?status=success');
+                $_SESSION['id'] = $id;
+                header('Location: Profile.php');
             } else {
                 echo "<p class='alert alert-danger' role='alert'>
                 Invalid .</p>";

@@ -2,7 +2,7 @@
     include "config.php";
     include "basecss.php";
     session_start();
-    if(!isset($_SESSION['uname'])){
+    if(!isset($_SESSION['id'])){
         header('Location: index.php');
     }
     echo "Halo ".$_SESSION['uname'];
