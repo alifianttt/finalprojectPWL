@@ -1,15 +1,17 @@
 <?php
 include "config.php";
-
+global $db;
 session_start();
 if(!isset($_SESSION['id'])){
     header('Location: login.php');
-    }
+}
+
     $id = $_SESSION['id'];
     $select = "SELECT * FROM admin_table where id_user='$id'";
     $sql = mysqli_query($db, $select);
     $row = mysqli_fetch_array($sql);
     $name = $row['nama'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,6 +47,7 @@ if(!isset($_SESSION['id'])){
         <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/my foto.jpg" alt="">
       </span>
         </a>
+        <a class="nav-link js-scroll-trigger" href="login.php?logout='1'" style="color:white">Logout</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
