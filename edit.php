@@ -1,24 +1,16 @@
 <?php
 include "basecss.php";
 include "config.php";
+include "proses-edit.php";
+
     session_start();
     include "config.php";
     $id = $_GET['id'];
     $select = "SELECT * FROM user_table where id_user='$id'";
     $sql = mysqli_query($db, $select);
     $row = mysqli_fetch_array($sql);
+    editdata();
     
-    if(isset($_POST['edit'])){
-        $name = $_POST['nama'];
-        $usr_name = $_POST['user_name'];
-        $addr = $_POST['alamat'];
-        $update = "UPDATE user_table SET nama='$name', usr_name='$usr_name', alamat='$addr' WHERE id_user ='$id'";
-        $sql = mysqli_query($db, $update);
-    
-       echo "<p class='alert alert-success' role='alert'>
-       Succes Edit .</p>";
-    }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

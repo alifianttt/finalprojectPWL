@@ -1,4 +1,4 @@
-CREATE TABLE 'botanical_db`.'user_table' (
+CREATE TABLE `botanical_db`.'user_table' (
     `id_user` INT NOT NULL AUTO_INCREMENT ,  
     `nama` VARCHAR(64) NOT NULL ,  
     `usr_name` VARCHAR(16) NOT NULL ,

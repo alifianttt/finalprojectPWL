@@ -1,17 +1,23 @@
 <?php
 include "config.php";
+include "prosesdiagnosa.php";
 global $db;
 session_start();
 if(!isset($_SESSION['id'])){
     header('Location: login.php');
 }
 
+    //select admin
     $id = $_SESSION['id'];
-    $select = "SELECT * FROM admin_table where id_user='$id'";
-    $sql = mysqli_query($db, $select);
-    $row = mysqli_fetch_array($sql);
-    $name = $row['nama'];
-
+    $select = "SELECT * from admin_table where id_admin='$id'"; 
+    $admin = mysqli_query($db, $select);
+    $res = mysqli_fetch_array($admin);  
+    //join table
+    $list = "SELECT user_table.nama, user_table.alamat, diagnose_table.hasil FROM user_table join diagnose_table on user_table.id_user = diagnose_table.id_user";    
+    $sql2 = mysqli_query($db, $list);
+    
+    
+    $no=0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +79,7 @@ if(!isset($_SESSION['id'])){
 
         <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
             <div class="w-100">
-                <h1 class="mb-0"><?php echo $name;?>
+                <h1 class="mb-0"><?php echo $res['nama'];?>
                 </h1>
                 <div class="subheading mb-5">
                     Jalan Cempaka 1 no 15 Pohruboh sleman yogyakarta
@@ -99,28 +105,34 @@ if(!isset($_SESSION['id'])){
         <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
             <div class="w-100">
                 <h2 class="mb-5">Daftar User</h2>
-                <form action="prosesdiagnosa.php" method="POST">
+                
                 <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="resume-content">
-                        <h3 class="mb-0">Diagnosa 1</h3>
-                        <div class="form-group">
-                            <label for="diagnose1">Apakah Biji Kuning?</label>
-                            <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose1" value="tidak">Tidak</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="diagnose2">Apakah Biji Hitam?</label>
-                            <label ><input type="radio" name="diagnose2" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose2" value="tidak">Tidak</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="diagnose3">Apakah Biji Kuning?</label>
-                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
-                        </div>
+                   
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">Hasil</th>
+                            </tr>
+                        </thead>
                         
-                        <input type="submit" name="starts" value="Start" class="btn btn-success">
-                    </div>
+                        
+                        <tbody>
+                        <?php  
+                        while($row = mysqli_fetch_array($sql2)) {         
+                            echo "<tr>";
+                            echo "<td>".++$no."</td>";
+                            echo "<td>".$row['nama']."</td>";
+                            echo "<td>".$row['alamat']."</td>";
+                            echo "<td>".$row['hasil']."</td>";    
+                            
+                        }
+                        ?>
+                        </tbody>
+                        
+                    </table>
                 </div>
                 </form>
             </div>

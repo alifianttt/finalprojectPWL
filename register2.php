@@ -59,7 +59,13 @@ include "basecss.php";
                         </div>
 
                         <div class="form-group">
-                        <input type="text" class="form-control" name="alamat" placeholder="Alamat">
+                        <select name="alamat" id="inputState" class="form-control">
+                            <option selected>Pilih Alamat</option>
+                            <option value="Bantul">Bantul</option>
+                            <option value="Sleman">Sleman</option>
+                            <option value="Gunung Kidul">Gunung Kidul</option>
+                            <option value="Kulon Progo">Kulon Progo</option>
+                        </select>
                         </div>
 
                         <div class="form-group">
@@ -67,7 +73,8 @@ include "basecss.php";
                         </div>
                         
                         <div class="form-group">
-                            <select name="user-type" id="">Daftar Sebagai
+                            <select name="user-type" id="inputState" class="form-control">
+                                <option selected>Daftar Sebagai</option>
                                 <option value="User">User</option>
                                 <option value="Admin">Admin</option>
                             </select>

@@ -1,4 +1,10 @@
 <?php 
+include "config.php";
+function add($hasil, $id){
+    global $db;
+    $sql = "INSERT INTO diagnose_table (hasil, id_user) VALUE ('$hasil', '$id')";
+    $query = mysqli_query($db, $sql);
+}    
     if(isset($_POST['starts'])){
         $diag1=$_POST['diagnose1'];
         $diag2=$_POST['diagnose2'];
@@ -15,4 +21,5 @@
             header('Location: result.php?res=tidak');
         }
     }
+    
 ?>
