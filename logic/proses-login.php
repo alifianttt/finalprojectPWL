@@ -1,5 +1,5 @@
 <?php
-    include "dbconfig/config.php";
+    require "../dbconfig/config.php";
     function login(){
         global $db;
     if(isset($_POST['submit'])){
@@ -14,7 +14,7 @@
             $id = $row['id_admin']; 
             if($count > 0){
                 $_SESSION['id'] = $id;
-                header('Location: admin.php');
+                header('Location: ../view-page/admin.php');
             } else {
                 echo "<p class='alert alert-danger' role='alert'>
                 Invalid .</p>";
@@ -30,7 +30,7 @@
             $id = $row['id_user'];
             if($count > 0){
                 $_SESSION['id'] = $id;
-                header('Location: Profile.php');
+                header('Location: ../view-page/Profile.php');
             } else {
                 echo "<p class='alert alert-danger' role='alert'>
                 Invalid .</p>";

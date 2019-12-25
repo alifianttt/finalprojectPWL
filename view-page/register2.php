@@ -1,5 +1,5 @@
 <?php
-include "basecss.php";
+require "../basecss.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@ include "basecss.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Halaman Pendaftaran</title>
 
-    <link rel="stylesheet" type="text/css" href="./res/css/registration.css">
+    <link rel="stylesheet" type="text/css" href="../res/css/registration.css">
 
 </head>
 
@@ -19,7 +19,7 @@ include "basecss.php";
         <!-- row logo -->
         <div class="row row-logo p-2 mb-4">
             <div class="col-md text-center">
-               <a href="./index.php"><img src="./res/img/logo-perfectseed-horizontal.png" alt="" class="logo text-xs-center"></a> 
+               <a href="./index.php"><img src="../res/img/logo-perfectseed-horizontal.png" alt="" class="logo text-xs-center"></a> 
             </div>
         </div>
         <!-- endof row logo -->
@@ -31,7 +31,7 @@ include "basecss.php";
 
                 <div class="row pt-5">
                     <div class="col-md text-center  art-col">
-                        <img src="./res/img/art.png" alt="" class="art .img-fluid">
+                        <img src="../res/img/art.png" alt="" class="art .img-fluid">
                     </div>
                 </div>
                 
@@ -49,7 +49,7 @@ include "basecss.php";
 
             <div class="col-md right-side pt-3 text-center">
                 <h4 class="mt-5 ">Lengkapi formulir dibawah ini</h4>
-                <form action="logic/proses-register.php" method="POST" class="pr-5">
+                <form action="../logic/proses-register.php" method="POST" class="pr-5">
                         <div class="form-group mt-5">
                         <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap">
                         </div>
@@ -100,8 +100,8 @@ include "basecss.php";
         </div>
 
         <!-- bg -->
-            <img class="bg-bot" src="./res/img/elipse-bot.png" alt="">
-            <img class="bg-top" src="./res/img/elipse-top.png" alt="">
+            <img class="bg-bot" src="../res/img/elipse-bot.png" alt="">
+            <img class="bg-top" src="../res/img/elipse-top.png" alt="">
 
             <!-- endof bg -->
     </div>

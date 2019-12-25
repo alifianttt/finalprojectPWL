@@ -1,5 +1,5 @@
 <?php
-include "dbconfig/config.php";
+require "../dbconfig/config.php";
 if(isset($_POST['daftar'])){
     if($_POST['user-type']=="Admin"){
    
@@ -13,9 +13,9 @@ if(isset($_POST['daftar'])){
         $query = mysqli_query($db, $sql);
 
         if($query){
-            header('Location: login.php?status=sukses');
+            header('Location: ../view-page/login.php?status=sukses');
         } else {
-            header('Location: login.php?staus=gagal');
+            header('Location: ../view-page/login.php?staus=gagal');
         }
          
     } else {
@@ -29,9 +29,9 @@ if(isset($_POST['daftar'])){
         $query = mysqli_query($db, $sql);
 
         if($query){
-            header('Location: login.php?status=sukses');
+            header('Location: ../view-page/login.php?status=sukses');
         } else {
-            header('Location: login.php?staus=gagal');
+            header('Location: ../view-page/login.php?staus=gagal');
         }
     }
 }

@@ -1,10 +1,10 @@
 <?php
-    include "dbconfig/config.php";
-    include "logic/function.php";
-    include "basecss.php";
+    require "../dbconfig/config.php";
+    require "../logic/function.php";
+    require "../basecss.php";
     session_start();
     if(!isset($_SESSION['id'])){
-        header('Location: Profile.php');
+        header('Location: ../view-page/Profile.php');
     }
     
 ?>

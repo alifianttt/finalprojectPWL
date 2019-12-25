@@ -1,7 +1,7 @@
 <?php
-include "basecss.php";
-include "dbconfig/config.php";
-include "logic/proses-edit.php";
+require "../basecss.php";
+require "../dbconfig/config.php";
+require "../logic/proses-edit.php";
 
     session_start();
     $id = $_GET['id'];
@@ -29,7 +29,7 @@ include "logic/proses-edit.php";
         <!-- row logo -->
         <div class="row row-logo p-2 mb-4">
             <div class="col-md text-center">
-               <a href="./index.php"><img src="./res/img/logo-perfectseed-horizontal.png" alt="" class="logo text-xs-center"></a> 
+               <a href="../index.php"><img src="../res/img/logo-perfectseed-horizontal.png" alt="" class="logo text-xs-center"></a> 
             </div>
         </div>
         <!-- endof row logo -->
@@ -84,8 +84,8 @@ include "logic/proses-edit.php";
         </div>
 
         <!-- bg -->
-            <img class="bg-bot" src="./res/img/elipse-bot.png" alt="">
-            <img class="bg-top" src="./res/img/elipse-top.png" alt="">
+            <img class="bg-bot" src="../res/img/elipse-bot.png" alt="">
+            <img class="bg-top" src="../res/img/elipse-top.png" alt="">
 
             <!-- endof bg -->
     </div>

@@ -1,8 +1,8 @@
 <?php
-    include "basecss.php";
-    include "dbconfig/config.php";
-    include "api.php";
-    include "logic/proses-login.php";
+    require "../basecss.php";
+    require "../dbconfig/config.php";
+    require "../api.php";
+    require "../logic/proses-login.php";
     session_start();
     login();
 ?>

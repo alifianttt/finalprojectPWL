@@ -1,25 +1,13 @@
 <?php
-include "dbconfig/config.php";
-include "logic/function.php";
+require "../dbconfig/config.php";
+require "../logic/function.php";
 global $db;
 session_start();
-$datastatistik = array();
 if(!isset($_SESSION['id'])){
-    header('Location: login.php');
+    header('Location: ../view-page/login.php');
 }
-
-    //select admin
     $id = $_SESSION['id'];
-    $select = "SELECT * from admin_table where id_admin='$id'"; 
-    $admin = mysqli_query($db, $select);
-    $res = mysqli_fetch_array($admin);  
-    //join table
-    $list = "SELECT user_table.nama, user_table.alamat as address, diagnose_table.hasil as diagnose FROM user_table join diagnose_table on user_table.id_user = diagnose_table.id_user";    
-    $sql2 = mysqli_query($db, $list);
-    //getstatistik
     
-    
-    $no=0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,14 +20,17 @@ if(!isset($_SESSION['id'])){
     <meta name="author" content="">
 
     <title>Profile</title>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
 
-    <link href="css/resume.min.css" rel="stylesheet">
+    <link href="../css/resume.min.css" rel="stylesheet">
 
 </head>
 
@@ -49,10 +40,10 @@ if(!isset($_SESSION['id'])){
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
             <span class="d-block d-lg-none">Ananda Emka Oktora</span>
             <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/my foto.jpg" alt="">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="../img/my foto.jpg" alt="">
       </span>
         </a>
-        <a class="nav-link js-scroll-trigger" href="login.php?logout='1'" style="color:white">Logout</a>
+        <a class="nav-link js-scroll-trigger" href="../view-page/login.php?logout='1'" style="color:white">Logout</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -68,7 +59,7 @@ if(!isset($_SESSION['id'])){
                     <a class="nav-link js-scroll-trigger" href="#experience">Diagnose</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#education">Statistik</a>
+                    <a class="nav-link js-scroll-trigger" href="#education">History</a>
                 </li>
             </ul>
         </div>
@@ -78,7 +69,7 @@ if(!isset($_SESSION['id'])){
 
         <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
             <div class="w-100">
-                <h1 class="mb-0"><?php echo $res['nama'];?>
+                <h1 class="mb-0"><?php selectuser($id)?>
                 </h1>
                 <div class="subheading mb-5">
                     Jalan Cempaka 1 no 15 Pohruboh sleman yogyakarta
@@ -86,7 +77,7 @@ if(!isset($_SESSION['id'])){
                 <p class="lead mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
                     book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
                     more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <p><a href="edit.php?id=<?php echo $id;?>" class="btn btn-success">Edit</a> </p>
+                    <p><a href="../view-page/edit.php?id=<?php echo $id;?>" class="btn btn-success">Edit</a> </p>
                 <div class="social-icons">
                     <a href="#">
                         <i class="fab fa-twitter"></i>
@@ -103,38 +94,54 @@ if(!isset($_SESSION['id'])){
 
         <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
             <div class="w-100">
-                <h2 class="mb-5">Daftar User</h2>
-                
+                <h2 class="mb-5">Diagnosa</h2>
+                <form action="../logic/function.php" method="POST">
                 <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                   
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Alamat</th>
-                            <th scope="col">Hasil</th>
-                            </tr>
-                        </thead>
+                    <div class="resume-content">
+                        <h3 class="mb-0">Diagnosa 1</h3>
+                        <div class="form-group">
+                            <label for="diagnose1">Apakah Biji Kuning?</label>
+                            <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose1" value="tidak">Tidak</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="diagnose2">Apakah Biji Hitam?</label>
+                            <label ><input type="radio" name="diagnose2" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose2" value="tidak">Tidak</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="diagnose3">Apakah Biji Kuning?</label>
+                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
+                        </div>
                         
-                        
-                        <tbody>
-                        <?php  
-                        while($row = mysqli_fetch_array($sql2)) {         
-                            echo "<tr>";
-                            echo "<td>".++$no."</td>";
-                            echo "<td>".$row['nama']."</td>";
-                            echo "<td>".$row['address']."</td>";
-                            echo "<td>".$row['diagnose']."</td>";    
-                            
-                        }
-                        ?>
-                        </tbody>
-                        
-                    </table>
+                        <input type="submit" name="starts" value="Start" class="btn btn-success" data-target="#myModal">
+                        <!--<button class="btn btn-success" data-target="#myModal">Star</button>-->
+                    </div>
                 </div>
                 </form>
             </div>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Next</button>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+  
             
         </section>
         
@@ -142,18 +149,21 @@ if(!isset($_SESSION['id'])){
 
         <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
             <div class="w-100">
-                <h2 class="mb-5">Statistik</h2>
+                <h2 class="mb-5">History</h2>
+
                 <table class="table table-striped">
                         <thead>
                             <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Kode</th>
                             <th scope="col">Hasil</th>
+                            <th scope="col">Waktu</th>
                             </tr>
                         </thead>
+                        
+                        
                         <tbody>
                         <?php  
-                            listkode();
+                            history($id);
                         ?>
                         </tbody>
                         
@@ -163,10 +173,10 @@ if(!isset($_SESSION['id'])){
         </section>
     </div>
 
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/resume.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../js/resume.min.js"></script>
 </body>
 
 </html>

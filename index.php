@@ -1,5 +1,5 @@
 <?php
-    include "basecss.php";
+    require "basecss.php";
     
 ?>
 
@@ -58,13 +58,13 @@
 
                     <div class="row mt-3">
                         <div class="col">
-                            <a href="./register2.php"><button type="button" class="btn btn-daftar">Daftar Sekarang</button></a>
+                            <a href="./view-page/register2.php"><button type="button" class="btn btn-daftar">Daftar Sekarang</button></a>
                         </div>
                     </div>
 
                     <div class="row mt-3">
                         <div class="col">
-                            <a href="./login.php"><button type="button" class="btn btn-masuk">Masuk</button></a>
+                            <a href="./view-page/login.php"><button type="button" class="btn btn-masuk">Masuk</button></a>
                         </div>
                     </div>
 
