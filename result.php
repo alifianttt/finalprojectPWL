@@ -1,7 +1,7 @@
 <?php
-    include "config.php";
+    include "dbconfig/config.php";
+    include "logic/function.php";
     include "basecss.php";
-    include "prosesdiagnosa.php";
     session_start();
     if(!isset($_SESSION['id'])){
         header('Location: Profile.php');
@@ -21,24 +21,27 @@
         <h1>Hasil Diagnosa</h1>
         <?php
             $id = $_SESSION['id'];
+            
+            date_default_timezone_set('Asia/Jakarta');
+            $now = (new DateTime())->format("Y-m-d H:i:s");
             if($_GET['res']=='layak'){
                 $hasil = "Biji anda sangat layak";
-                add($hasil, $id);
+                add($hasil, $id, $now);
                 echo "<h4>Berhasil</h4>";
                 echo "<h4>".$hasil."</h4>";
             } else if ($_GET['res']=='sedang1'){
-                $hasil = "Biji anda 90% layak";
-                add($hasil, $id);
+                $hasil = "Biji anda 80% layak";
+                add($hasil, $id, $now);
                 echo "<h4>Berhasil</h4>";
                 echo "<h5>".$hasil."</h5>";
             } else if($_GET['res']=='sedang2'){
-                $hasil = "Biji anda 80% layak";
-                add($hasil, $id);
+                $hasil = "Biji anda 60% layak";
+                add($hasil, $id, $now);
                 echo "<h4>Berhasil</h4>";
                 echo "<h5>".$hasil."</h5>";
             } else if($_GET['res']=='sedang3'){
-                $hasil = "Biji anda 70% layak";
-                add($hasil, $id);
+                $hasil = "Sebaiknya bijinya diganti";
+                add($hasil, $id, $now);
                 echo "<h4>Berhasil</h4>";
                 echo "<h5>".$hasil."</h5>";
             }

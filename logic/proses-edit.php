@@ -1,5 +1,7 @@
 <?php
-    function editdata(){
+include "dbconfig/config.php";
+    function editdata($id){
+        global $db;
         if(isset($_POST['edit'])){
             $name = $_POST['nama'];
             $usr_name = $_POST['user_name'];
@@ -12,4 +14,7 @@
         }
     
     }
+    
+    
+    
 ?>

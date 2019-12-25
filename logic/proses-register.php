@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+include "dbconfig/config.php";
 if(isset($_POST['daftar'])){
     if($_POST['user-type']=="Admin"){
    

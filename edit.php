@@ -1,15 +1,14 @@
 <?php
 include "basecss.php";
-include "config.php";
-include "proses-edit.php";
+include "dbconfig/config.php";
+include "logic/proses-edit.php";
 
     session_start();
-    include "config.php";
     $id = $_GET['id'];
     $select = "SELECT * FROM user_table where id_user='$id'";
     $sql = mysqli_query($db, $select);
     $row = mysqli_fetch_array($sql);
-    editdata();
+    editdata($id);
     
 ?>
 <!DOCTYPE html>

@@ -49,7 +49,7 @@ include "basecss.php";
 
             <div class="col-md right-side pt-3 text-center">
                 <h4 class="mt-5 ">Lengkapi formulir dibawah ini</h4>
-                <form action="proses-register.php" method="POST" class="pr-5">
+                <form action="logic/proses-register.php" method="POST" class="pr-5">
                         <div class="form-group mt-5">
                         <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap">
                         </div>

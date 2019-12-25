@@ -1,5 +1,5 @@
 <?php
-    include "config.php";
+    include "dbconfig/config.php";
     function login(){
         global $db;
     if(isset($_POST['submit'])){

@@ -1,8 +1,9 @@
 <?php
-include "config.php";
-include "prosesdiagnosa.php";
+include "dbconfig/config.php";
+include "logic/function.php";
 global $db;
 session_start();
+$datastatistik = array();
 if(!isset($_SESSION['id'])){
     header('Location: login.php');
 }
@@ -13,8 +14,9 @@ if(!isset($_SESSION['id'])){
     $admin = mysqli_query($db, $select);
     $res = mysqli_fetch_array($admin);  
     //join table
-    $list = "SELECT user_table.nama, user_table.alamat, diagnose_table.hasil FROM user_table join diagnose_table on user_table.id_user = diagnose_table.id_user";    
+    $list = "SELECT user_table.nama, user_table.alamat as address, diagnose_table.hasil as diagnose FROM user_table join diagnose_table on user_table.id_user = diagnose_table.id_user";    
     $sql2 = mysqli_query($db, $list);
+    //getstatistik
     
     
     $no=0;
@@ -30,13 +32,10 @@ if(!isset($_SESSION['id'])){
     <meta name="author" content="">
 
     <title>Profile</title>
-
-
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
 
@@ -69,7 +68,7 @@ if(!isset($_SESSION['id'])){
                     <a class="nav-link js-scroll-trigger" href="#experience">Diagnose</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#education">History</a>
+                    <a class="nav-link js-scroll-trigger" href="#education">Statistik</a>
                 </li>
             </ul>
         </div>
@@ -125,8 +124,8 @@ if(!isset($_SESSION['id'])){
                             echo "<tr>";
                             echo "<td>".++$no."</td>";
                             echo "<td>".$row['nama']."</td>";
-                            echo "<td>".$row['alamat']."</td>";
-                            echo "<td>".$row['hasil']."</td>";    
+                            echo "<td>".$row['address']."</td>";
+                            echo "<td>".$row['diagnose']."</td>";    
                             
                         }
                         ?>
@@ -143,31 +142,22 @@ if(!isset($_SESSION['id'])){
 
         <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
             <div class="w-100">
-                <h2 class="mb-5">History</h2>
-
-                <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="resume-content">
-                        <h3 class="mb-0">Hasil Diagnosa Bulan ke-1</h3>
-                        <div class="subheading mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
-                        <p>Dengan Nilai : 7.0 Cukup Baik</p>
-                    </div>
-                    <div class="resume-date text-md-right">
-                        <span class="text-primary">December 2019</span>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-                    <div class="resume-content">
-                        <h3 class="mb-0">Hasil Diagnosa Bulan ke-2</h3>
-                        <div class="subheading mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
-                        <p>Dengan Nilai : 8.0 Baik</p>
-                    </div>
-                    <div class="resume-date text-md-right">
-                        <span class="text-primary">Januari 2020</span>
-                    </div>
-                </div>
+                <h2 class="mb-5">Statistik</h2>
+                <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Kode</th>
+                            <th scope="col">Hasil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php  
+                            listkode();
+                        ?>
+                        </tbody>
+                        
+                    </table>
 
             </div>
         </section>

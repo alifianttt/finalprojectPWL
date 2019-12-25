@@ -1,8 +1,8 @@
 <?php
     include "basecss.php";
-    include "config.php";
+    include "dbconfig/config.php";
     include "api.php";
-    include "proses-login.php";
+    include "logic/proses-login.php";
     session_start();
     login();
 ?>
@@ -68,8 +68,8 @@
                 </label>
             </div>
             <br>
-            <input type="submit" class="btn btn-success" value="Submit" name="submit">
-        </form>
+            <input type="submit" class="btn btn-success" value="Login" name="submit">
+        </form> <br>
         <p>Cuaca Saat Ini <?php echo $weather;?></p>
         <img src="<?php echo $image ;?>" alt="">
         <p>Suhu Saat ini <?php echo $temp;?> °C</p>

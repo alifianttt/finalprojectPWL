@@ -1,15 +1,13 @@
 <?php
-include "config.php";
+include "dbconfig/config.php";
+include "logic/function.php";
 global $db;
 session_start();
 if(!isset($_SESSION['id'])){
     header('Location: login.php');
 }
     $id = $_SESSION['id'];
-    $select = "SELECT * FROM user_table where id_user='$id'";
-    $sql = mysqli_query($db, $select);
-    $row = mysqli_fetch_array($sql);
-    $name = $row['nama'];
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +69,7 @@ if(!isset($_SESSION['id'])){
 
         <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
             <div class="w-100">
-                <h1 class="mb-0"><?php echo $name;?>
+                <h1 class="mb-0"><?php selectuser($id)?>
                 </h1>
                 <div class="subheading mb-5">
                     Jalan Cempaka 1 no 15 Pohruboh sleman yogyakarta
@@ -97,7 +95,7 @@ if(!isset($_SESSION['id'])){
         <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
             <div class="w-100">
                 <h2 class="mb-5">Diagnosa</h2>
-                <form action="prosesdiagnosa.php" method="POST">
+                <form action="function.php" method="POST">
                 <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="resume-content">
                         <h3 class="mb-0">Diagnosa 1</h3>
@@ -131,29 +129,23 @@ if(!isset($_SESSION['id'])){
             <div class="w-100">
                 <h2 class="mb-5">History</h2>
 
-                <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="resume-content">
-                        <h3 class="mb-0">Hasil Diagnosa Bulan ke-1</h3>
-                        <div class="subheading mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
-                        <p>Dengan Nilai : 7.0 Cukup Baik</p>
-                    </div>
-                    <div class="resume-date text-md-right">
-                        <span class="text-primary">December 2019</span>
-                    </div>
-                </div>
-
-                <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-                    <div class="resume-content">
-                        <h3 class="mb-0">Hasil Diagnosa Bulan ke-2</h3>
-                        <div class="subheading mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
-                        <p>Dengan Nilai : 8.0 Baik</p>
-                    </div>
-                    <div class="resume-date text-md-right">
-                        <span class="text-primary">Januari 2020</span>
-                    </div>
-                </div>
+                <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Hasil</th>
+                            <th scope="col">Waktu</th>
+                            </tr>
+                        </thead>
+                        
+                        
+                        <tbody>
+                        <?php  
+                            history();
+                        ?>
+                        </tbody>
+                        
+                    </table>
 
             </div>
         </section>
