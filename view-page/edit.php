@@ -19,7 +19,7 @@ require "../logic/proses-edit.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Halaman Pendaftaran</title>
 
-    <link rel="stylesheet" type="text/css" href="./res/css/registration.css">
+    <link rel="stylesheet" type="text/css" href="../res/css/registration.css">
 
 </head>
 
@@ -41,7 +41,7 @@ require "../logic/proses-edit.php";
 
                 <div class="row pt-5">
                     <div class="col-md text-center  art-col">
-                        <img src="./res/img/art.png" alt="" class="art .img-fluid">
+                        <img src="../res/img/art.png" alt="" class="art .img-fluid">
                     </div>
                 </div>
                 

@@ -1,5 +1,5 @@
 <?php
-include "dbconfig/config.php";
+require "../dbconfig/config.php";
     function editdata($id){
         global $db;
         if(isset($_POST['edit'])){

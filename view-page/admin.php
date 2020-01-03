@@ -62,13 +62,13 @@ if(!isset($_SESSION['id'])){
                     <a class="nav-link js-scroll-trigger" href="">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">Profile User</a>
+                    <a class="nav-link js-scroll-trigger" href="#about">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#experience">Diagnose</a>
+                    <a class="nav-link js-scroll-trigger" href="#experience">Diagnosa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#education">Statistik</a>
+                    <a class="nav-link js-scroll-trigger" href="#education">List Diagnosa</a>
                 </li>
             </ul>
         </div>
@@ -103,7 +103,7 @@ if(!isset($_SESSION['id'])){
 
         <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
             <div class="w-100">
-                <h2 class="mb-5">Daftar User</h2>
+                <h2 class="mb-5">Daftar User dan Statistik</h2>
                 
                 <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
                    
@@ -126,14 +126,12 @@ if(!isset($_SESSION['id'])){
                             echo "<td>".$row['nama']."</td>";
                             echo "<td>".$row['address']."</td>";
                             echo "<td>".$row['diagnose']."</td>";    
-                            
                         }
                         ?>
                         </tbody>
-                        
                     </table>
                 </div>
-                </form>
+                <img src="../data.php" alt="">
             </div>
             
         </section>
@@ -142,7 +140,8 @@ if(!isset($_SESSION['id'])){
 
         <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
             <div class="w-100">
-                <h2 class="mb-5">Statistik</h2>
+                <h2 class="mb-5">List Diagnosa</h2>
+                
                 <table class="table table-striped">
                         <thead>
                             <tr>

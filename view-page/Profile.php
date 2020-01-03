@@ -7,7 +7,6 @@ if(!isset($_SESSION['id'])){
     header('Location: ../view-page/login.php');
 }
     $id = $_SESSION['id'];
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,10 +68,10 @@ if(!isset($_SESSION['id'])){
 
         <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
             <div class="w-100">
-                <h1 class="mb-0"><?php selectuser($id)?>
+                <h1 class="mb-0"><?php selectnama($id)?>
                 </h1>
                 <div class="subheading mb-5">
-                    Jalan Cempaka 1 no 15 Pohruboh sleman yogyakarta
+                        <?php selectalamat($id)?>
                 </div>
                 <p class="lead mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
                     book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
@@ -100,46 +99,28 @@ if(!isset($_SESSION['id'])){
                     <div class="resume-content">
                         <h3 class="mb-0">Diagnosa 1</h3>
                         <div class="form-group">
-                            <label for="diagnose1">Apakah Biji Kuning?</label>
+                            <label for="diagnose1">Apakah Biji berlubang?</label>
                             <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
                             <label ><input type="radio" name="diagnose1" value="tidak">Tidak</label>
                         </div>
                         <div class="form-group">
-                            <label for="diagnose2">Apakah Biji Hitam?</label>
+                            <label for="diagnose2">Apakah Biji Normal?</label>
                             <label ><input type="radio" name="diagnose2" value="ya">Ya</label>
                             <label ><input type="radio" name="diagnose2" value="tidak">Tidak</label>
                         </div>
                         <div class="form-group">
-                            <label for="diagnose3">Apakah Biji Kuning?</label>
+                            <label for="diagnose3">Apakah Biji pucat?</label>
                             <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
                             <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
                         </div>
                         
-                        <input type="submit" name="starts" value="Start" class="btn btn-success" data-target="#myModal">
+                        <input type="submit" name="starts" value="Start" class="btn btn-success" data-toggle="modal" data-target="#myModal">
                         <!--<button class="btn btn-success" data-target="#myModal">Star</button>-->
                     </div>
                 </div>
                 </form>
             </div>
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-                
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                    </div>
-                    <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Next</button>
-                    </div>
-                </div>
-                
-                </div>
+            
             </div>
   
             

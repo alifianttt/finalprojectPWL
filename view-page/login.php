@@ -1,13 +1,11 @@
 <?php
-    require "../basecss.php";
-    require "../dbconfig/config.php";
-    require "../api.php";
-    require "../logic/proses-login.php";
+require "../basecss.php";    
+require "../dbconfig/config.php";    
+require "../api.php";    
+require "../logic/proses-login.php";    
     session_start();
     login();
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +21,6 @@
                 if(isset($_GET['status'])):
             ?>
             <p>
-
             <?php 
                 if($_GET['status'] == 'sukses'){
                     echo "<p class='alert alert-success' role='alert'>
@@ -39,7 +36,7 @@
 
         <h4>Welcome To Seed's Exper System </h4>
 
-        <p>Do you Have'nt Accountt? <a href="./register2.php">Sign Up</a></p>
+        <p>Do you Have'nt Accountt? <a href="../view-page/register2.php">Sign Up</a></p>
 
         <form action="" method="POST">
             <div class="form-group row">
