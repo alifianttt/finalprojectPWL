@@ -113,6 +113,17 @@ if(!isset($_SESSION['id'])){
                             <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
                             <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
                         </div>
+                    <h3 class="mb-0">Diagnosa Lingkungan</h3>
+                        <div class="form-group">
+                            <label for="diagnose3">Menggunakan Tanah Berhumus?</label>
+                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="diagnose3">Menggunakan Tanah Kering?</label>
+                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
+                        </div>
                         
                         <input type="submit" name="starts" value="Start" class="btn btn-success" data-toggle="modal" data-target="#myModal">
                         <!--<button class="btn btn-success" data-target="#myModal">Star</button>-->
