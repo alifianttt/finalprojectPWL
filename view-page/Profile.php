@@ -97,7 +97,7 @@ if(!isset($_SESSION['id'])){
                 <form action="../logic/function.php" method="POST">
                 <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="resume-content">
-                        <h3 class="mb-0">Diagnosa 1</h3>
+                        <h3 class="mb-0">Diagnosa Biji</h3>
                         <div class="form-group">
                             <label for="diagnose1">Apakah Biji berlubang?</label>
                             <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
