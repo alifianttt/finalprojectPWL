@@ -93,7 +93,7 @@ if(!isset($_SESSION['id'])){
 
         <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
             <div class="w-100">
-                <h2 class="mb-5">Diagnosa</h2>
+                <h2 class="mb-5">Diagnosa Untuk Bibit Unggul</h2>
                 <form action="../logic/function.php" method="POST">
                 <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="resume-content">
