@@ -8,5 +8,4 @@ $weather = $data['weather'][0]['description'];
 $icon = $data['weather'][0]['icon'];
 $temp = $data['main']['temp'];
 $image = "http://openweathermap.org/img/w/".$icon.".png";
-
 ?>

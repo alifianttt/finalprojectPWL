@@ -48,6 +48,7 @@ if(!isset($_SESSION['id'])){
     </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
+                
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="">Home</a>
                 </li>
@@ -99,30 +100,29 @@ if(!isset($_SESSION['id'])){
                     <div class="resume-content">
                         <h3 class="mb-0">Diagnosa Biji</h3>
                         <div class="form-group">
-                            <label for="diagnose1">Apakah Biji berlubang?</label>
+                            <label for="diagnose1">Apakah Biji didapat dari Koperasi?</label>
                             <label ><input type="radio" name="diagnose1" value="ya">Ya</label>
                             <label ><input type="radio" name="diagnose1" value="tidak">Tidak</label>
                         </div>
                         <div class="form-group">
-                            <label for="diagnose2">Apakah Biji Normal?</label>
+                            <label for="diagnose2">Apakah Biji sudah di rendam?</label>
                             <label ><input type="radio" name="diagnose2" value="ya">Ya</label>
                             <label ><input type="radio" name="diagnose2" value="tidak">Tidak</label>
                         </div>
                         <div class="form-group">
-                            <label for="diagnose3">Apakah Biji pucat?</label>
+                            <label for="diagnose3">Apakah Biji sudah bersih?</label>
                             <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
                             <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
                         </div>
-                    <h3 class="mb-0">Diagnosa Lingkungan</h3>
                         <div class="form-group">
                             <label for="diagnose3">Menggunakan Tanah Berhumus?</label>
-                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
+                            <label ><input type="radio" name="diagnose4" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose4" value="tidak">Tidak</label>
                         </div>
                         <div class="form-group">
                             <label for="diagnose3">Menggunakan Tanah Kering?</label>
-                            <label ><input type="radio" name="diagnose3" value="ya">Ya</label>
-                            <label ><input type="radio" name="diagnose3" value="tidak">Tidak</label>
+                            <label ><input type="radio" name="diagnose5" value="ya">Ya</label>
+                            <label ><input type="radio" name="diagnose5" value="tidak">Tidak</label>
                         </div>
                         
                         <input type="submit" name="starts" value="Start" class="btn btn-success" data-toggle="modal" data-target="#myModal">
@@ -151,8 +151,6 @@ if(!isset($_SESSION['id'])){
                             <th scope="col">Waktu</th>
                             </tr>
                         </thead>
-                        
-                        
                         <tbody>
                         <?php  
                             history($id);

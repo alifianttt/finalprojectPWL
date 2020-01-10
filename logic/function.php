@@ -18,6 +18,8 @@ function add($hasil, $id, $time){
             header('Location: ../view-page/result.php?res=sedang2');
         } else if ($diag1=='ya' && $diag2=='ya' && $diag3=='tidak'){
             header('Location: ../view-page/result.php?res=sedang3');
+        } else if ($diag1=='tidak' && $diag2=='ya' && $diag3=='tidak'){
+            header('Location: ../view-page/result.php?res=sedang4');
         } 
     }
     function listkode(){

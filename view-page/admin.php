@@ -7,7 +7,6 @@ $datastatistik = array();
 if(!isset($_SESSION['id'])){
     header('Location: ../view-page/login.php');
 }
-
     //select admin
     $id = $_SESSION['id'];
     $select = "SELECT * from admin_table where id_admin='$id'"; 
@@ -17,8 +16,6 @@ if(!isset($_SESSION['id'])){
     $list = "SELECT user_table.nama, user_table.alamat as address, diagnose_table.hasil as diagnose FROM user_table join diagnose_table on user_table.id_user = diagnose_table.id_user";    
     $sql2 = mysqli_query($db, $list);
     //getstatistik
-    
-    
     $no=0;
 ?>
 <!DOCTYPE html>

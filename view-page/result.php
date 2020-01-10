@@ -30,17 +30,22 @@
                 echo "<h4>Berhasil</h4>";
                 echo "<h4>".$hasil."</h4>";
             } else if ($_GET['res']=='sedang1'){
-                $hasil = "Biji anda 80% layak";
+                $hasil = "Biji anda cukup layak tapi perlu di rendam dengan air";
                 add($hasil, $id, $now);
                 echo "<h4>Berhasil</h4>";
                 echo "<h5>".$hasil."</h5>";
             } else if($_GET['res']=='sedang2'){
-                $hasil = "Biji anda 60% layak";
+                $hasil = "Biji anda memiliki vigor cukup tapi sebaiknya jangan direndam terlalu lama";
                 add($hasil, $id, $now);
                 echo "<h4>Berhasil</h4>";
                 echo "<h5>".$hasil."</h5>";
             } else if($_GET['res']=='sedang3'){
-                $hasil = "Sebaiknya bijinya diganti";
+                $hasil = "Biji anda perlu direndam dengan waktu yang cukup";
+                add($hasil, $id, $now);
+                echo "<h4>Berhasil</h4>";
+                echo "<h5>".$hasil."</h5>";
+            } else if($_GET['res']=='sedang4'){
+                $hasil = "Biji anda perlu di ganti karena vigornya terlalu rendah";
                 add($hasil, $id, $now);
                 echo "<h4>Berhasil</h4>";
                 echo "<h5>".$hasil."</h5>";
