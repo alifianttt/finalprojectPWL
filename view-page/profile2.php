@@ -2,6 +2,7 @@
 require "../basecss.php";
 require "../dbconfig/config.php";
 require "../logic/function.php";
+require "../api.php";    
 global $db;
 session_start();
 if(!isset($_SESSION['id'])){
@@ -28,9 +29,9 @@ if(!isset($_SESSION['id'])){
         <div class="col-2" style="background:green;height:100vh;display:flex;align-items:center;justify-content:center; font-size: 20px;">
             <div class="nav flex-column nav-pills bg-nav" id="v-pills-tab" role="tablist" aria-orientation="vertical" >
                 <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" style="color:white; background:transparent">Home</a>
-                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false" style="color:white; background:transparent">Profile</a>
-                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false" style="color:white; background:transparent">Messages</a>
-                <a class="nav-link js-scroll-trigger" href="../view-page/login.php?logout='1'" style="color:white">Logout</a>
+                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false" style="color:white; background:transparent">Diagnosa</a>
+                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false" style="color:white; background:transparent">History</a>
+                <a class="nav-link js-scroll-trigger" href="../view-page/loginpage.php?logout='1'" style="color:white">Logout</a>
             </div>
         </div>
         <div class="col-9">
@@ -46,7 +47,11 @@ if(!isset($_SESSION['id'])){
                         <p class="lead mb-5">
                             Selamat datang di web aplikasi simulasi sistem pakar untuk menentukan benih yang akan anda tanam 
                         </p>
-                            <p><a href="../view-page/edit.php?id=<?php echo $id;?>" class="btn btn-success">Edit</a> </p>
+                        <p>Cuaca Saat Ini <?php echo $weather;?></p>
+                        <img src="<?php echo $image ;?>" alt="">
+                        <p>Suhu Saat ini <?php echo $temp;?> °C</p>
+                        <p><a href="../view-page/edit.php?id=<?php echo $id;?>" class="btn btn-success">Edit</a> </p>
+                    
                     </div>
                 </div>
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">

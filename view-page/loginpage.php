@@ -21,7 +21,6 @@
 
 <body class="p-3">
     <div class="container">
-
             <?php
                 if(isset($_GET['status'])):
             ?>
@@ -68,12 +67,12 @@
                 <form action="" method="POST" class="pr-5">
 
                         <div class="form-group">
-                        <input type="text" class="form-control" name="user_name" placeholder="User Name">
+                        <input type="text" class="form-control" name="username" placeholder="User Name">
                         </div>
 
 
                         <div class="form-group">
-                        <input type="password" class="form-control" name="pass" placeholder="Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
                         </div>
                         
                         <div class="form-group">

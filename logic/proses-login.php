@@ -14,7 +14,7 @@
             $id = $row['id_admin']; 
             if($count > 0){
                 $_SESSION['id'] = $id;
-                header('Location: ../view-page/admin.php');
+                header('Location: ../view-page/admin2.php');
             } else {
                 echo "<p class='alert alert-danger' role='alert'>
                 Invalid .</p>";
@@ -30,7 +30,7 @@
             $id = $row['id_user'];
             if($count > 0){
                 $_SESSION['id'] = $id;
-                header('Location: ../view-page/Profile.php');
+                header('Location: ../view-page/profile2.php');
             } else {
                 echo "<p class='alert alert-danger' role='alert'>
                 Invalid .</p>";
@@ -41,7 +41,7 @@
     if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['id']);
-		header("location: login.php");
+		header("location: loginpage.php");
 	}
 }
 ?>

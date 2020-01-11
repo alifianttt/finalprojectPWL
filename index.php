@@ -62,7 +62,7 @@
 
                     <div class="row mt-3">
                         <div class="col">
-                            <a href="./view-page/login.php"><button type="button" class="btn btn-masuk">Masuk</button></a>
+                            <a href="./view-page/loginpage.php"><button type="button" class="btn btn-masuk">Masuk</button></a>
                         </div>
                     </div>
 

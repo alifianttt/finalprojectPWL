@@ -27,8 +27,13 @@ if(!isset($_SESSION['id'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -37,7 +42,7 @@ if(!isset($_SESSION['id'])){
                 <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" style="color:white; background:transparent">Home</a>
                 <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false" style="color:white; background:transparent">Profile</a>
                 <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false" style="color:white; background:transparent">Messages</a>
-                <a class="nav-link js-scroll-trigger" href="../view-page/login.php?logout='1'" style="color:white">Logout</a>
+                <a class="nav-link js-scroll-trigger" href="../view-page/loginpage.php?logout='1'" style="color:white">Logout</a>
             </div>
         </div>
         <div class="col-9">
@@ -48,7 +53,7 @@ if(!isset($_SESSION['id'])){
                         <h2 class="mb-0"><?php echo $res['nama'];?></h2>
                         <br>
                             <h4>
-                                
+                                <?php selectalamat($id)?>
                             </h4>
                         <p class="lead mb-5">
                             Selamat datang di web aplikasi simulasi sistem pakar untuk menentukan benih yang akan anda tanam 
@@ -58,48 +63,52 @@ if(!isset($_SESSION['id'])){
                 </div>
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                     <div class="container">
-                        <h2>Diagnosa</h2>
-                        <table class="table table-striped">
-                        <thead>
-                            <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Alamat</th>
-                            <th scope="col">Hasil</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php  
-                        while($row = mysqli_fetch_array($sql2)) {         
-                            echo "<tr>";
-                            echo "<td>".++$no."</td>";
-                            echo "<td>".$row['nama']."</td>";
-                            echo "<td>".$row['address']."</td>";
-                            echo "<td>".$row['diagnose']."</td>";    
-                        }
-                        ?>
-                        </tbody>
-                    </table>
+                    <h2 class="mb-5">Daftar User dan Statistik</h2>
+                        <table id="table_id" class="table table-striped display">
+                            <thead>
+                                <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Alamat</th>
+                                <th scope="col">Hasil</th>
+                                </tr>
+                            </thead>
+                            
+                            
+                            <tbody>
+                            <?php  
+                            while($row = mysqli_fetch_array($sql2)) {         
+                                echo "<tr>";
+                                echo "<td>".++$no."</td>";
+                                echo "<td>".$row['nama']."</td>";
+                                echo "<td>".$row['address']."</td>";
+                                echo "<td>".$row['diagnose']."</td>";    
+                            }
+                            ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                     <div class="container">
-                        <h2>History</h2>
-                            <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                <th scope="col">No</th>
-                                <th scope="col">Hasil</th>
-                                <th scope="col">Waktu</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <?php  
-                                history($id);
-                            ?>
-                            </tbody>
-                            </table>
-                            <img src="../data.php" alt="">
+                    <h2 class="mb-5">List Diagnosa</h2>
+                
+                    <table id="table_bawah" class="table table-striped display">
+                        <thead>
+                            <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Kode</th>
+                            <th scope="col">Hasil</th>
+                            <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php  
+                            listkode();
+                        ?>
+                        </tbody>
+                        
+                    </table>
                     </div>
                 </div>
                 
@@ -108,4 +117,12 @@ if(!isset($_SESSION['id'])){
         </div>
     </div>
 </body>
+<script>
+$( function () {
+    $('#table_id').DataTable();
+} );
+$( function () {
+    $('#table_bawah').DataTable();
+} );
+</script>
 </html>
