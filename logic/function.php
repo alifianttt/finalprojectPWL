@@ -11,15 +11,15 @@ function add($hasil, $id, $time){
         $diag3=$_POST['diagnose3'];
         
         if($diag1=='ya' && $diag2=='ya' && $diag3=='ya'){
-            header('Location: ../view-page/result.php?res=layak');
+            header('Location: ../view-page/hasil.php?res=layak');
         } else if ($diag1=='ya' && $diag2=='tidak' && $diag3=='ya'){
-            header('Location: ../view-page/result.php?res=sedang1');
+            header('Location: ../view-page/hasil.php?res=sedang1');
         } else if ($diag1=='tidak' && $diag2=='tidak' && $diag3=='ya'){
-            header('Location: ../view-page/result.php?res=sedang2');
+            header('Location: ../view-page/hasil.php?res=sedang2');
         } else if ($diag1=='ya' && $diag2=='ya' && $diag3=='tidak'){
-            header('Location: ../view-page/result.php?res=sedang3');
+            header('Location: ../view-page/hasil.php?res=sedang3');
         } else if ($diag1=='tidak' && $diag2=='ya' && $diag3=='tidak'){
-            header('Location: ../view-page/result.php?res=sedang4');
+            header('Location: ../view-page/hasil.php?res=sedang4');
         } 
     }
     function listkode(){
